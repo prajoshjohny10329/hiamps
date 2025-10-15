@@ -304,7 +304,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  className="inline-flex items-center gap-3 py-[9px] pl-4 pr-8.5 text-white rounded-md bg-blue ease-out duration-200 hover:bg-opacity-95"
+                  className="inline-flex items-center gap-3 py-[9px] pl-4 pr-8.5 text-white rounded-md bg-red-dark ease-out duration-200 hover:bg-opacity-95"
                   href="#"
                 >
                   <svg

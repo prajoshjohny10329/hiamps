@@ -168,7 +168,7 @@ const ShopDetails = () => {
                       {product.title}
                     </h2>
 
-                    <div className="inline-flex font-medium text-custom-sm text-white bg-blue rounded py-0.5 px-2.5">
+                    <div className="inline-flex font-medium text-custom-sm text-white bg-red-dark rounded py-0.5 px-2.5">
                       30% OFF
                     </div>
                   </div>
@@ -437,7 +437,7 @@ const ShopDetails = () => {
                                 <div
                                   className={`mr-2 flex h-4 w-4 items-center justify-center rounded border ${
                                     storage === item.id
-                                      ? "border-blue bg-blue"
+                                      ? "border-blue bg-red-dark"
                                       : "border-gray-4"
                                   } `}
                                 >
@@ -505,7 +505,7 @@ const ShopDetails = () => {
                                 <div
                                   className={`mr-2 flex h-4 w-4 items-center justify-center rounded border ${
                                     type === item.id
-                                      ? "border-blue bg-blue"
+                                      ? "border-blue bg-red-dark"
                                       : "border-gray-4"
                                   } `}
                                 >
@@ -573,7 +573,7 @@ const ShopDetails = () => {
                                 <div
                                   className={`mr-2 flex h-4 w-4 items-center justify-center rounded border ${
                                     sim === item.id
-                                      ? "border-blue bg-blue"
+                                      ? "border-blue bg-red-dark"
                                       : "border-gray-4"
                                   } `}
                                 >
@@ -671,7 +671,7 @@ const ShopDetails = () => {
 
                       <a
                         href="#"
-                        className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                        className="inline-flex font-medium text-white bg-red-dark py-3 px-7 rounded-md ease-out duration-200 hover:bg-red-dark-dark"
                       >
                         Purchase Now
                       </a>
@@ -711,7 +711,7 @@ const ShopDetails = () => {
                   <button
                     key={key}
                     onClick={() => setActiveTab(item.id)}
-                    className={`font-medium lg:text-lg ease-out duration-200 hover:text-blue relative before:h-0.5 before:bg-blue before:absolute before:left-0 before:bottom-0 before:ease-out before:duration-200 hover:before:w-full ${
+                    className={`font-medium lg:text-lg ease-out duration-200 hover:text-blue relative before:h-0.5 before:bg-red-dark before:absolute before:left-0 before:bottom-0 before:ease-out before:duration-200 hover:before:w-full ${
                       activeTab === item.id
                         ? "text-blue before:w-full"
                         : "text-dark before:w-0"
@@ -1430,7 +1430,7 @@ const ShopDetails = () => {
 
                         <button
                           type="submit"
-                          className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                          className="inline-flex font-medium text-white bg-red-dark py-3 px-7 rounded-md ease-out duration-200 hover:bg-red-dark-dark"
                         >
                           Submit Reviews
                         </button>

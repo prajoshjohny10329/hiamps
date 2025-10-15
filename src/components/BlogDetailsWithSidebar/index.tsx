@@ -150,7 +150,7 @@ const BlogDetailsWithSidebar = () => {
                     <ul className="flex flex-wrap items-center gap-3.5">
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                           href="#"
                         >
                           Desktop
@@ -159,7 +159,7 @@ const BlogDetailsWithSidebar = () => {
 
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                           href="#"
                         >
                           Macbook
@@ -168,7 +168,7 @@ const BlogDetailsWithSidebar = () => {
 
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                           href="#"
                         >
                           PC
@@ -286,56 +286,56 @@ const BlogDetailsWithSidebar = () => {
                   <div className="flex flex-col gap-3">
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Desktop
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         12
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Laptop
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         25
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Monitor
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         23
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       UPS
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         09
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Phone
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         54
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Tablet
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         21
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Watch
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         17
                       </span>
                     </button>
 
                     <button className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue">
                       Mouse
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-red-dark">
                         08
                       </span>
                     </button>
@@ -352,56 +352,56 @@ const BlogDetailsWithSidebar = () => {
                 <div className="p-4 sm:p-6">
                   <div className="flex flex-wrap gap-3.5">
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Desktop
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Macbook
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       PC
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Watch
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       USB Cable
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Mouse
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Windows PC
                     </a>
 
                     <a
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-red-dark hover:border-blue"
                       href="#"
                     >
                       Monitor

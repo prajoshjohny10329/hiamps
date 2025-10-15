@@ -196,9 +196,9 @@ const ShopWithSidebar = () => {
                       aria-label="button for product grid tab"
                       className={`${
                         productStyle === "grid"
-                          ? "bg-blue border-blue text-white"
+                          ? "bg-red-dark border-blue text-white"
                           : "text-dark bg-gray-1 border-gray-3"
-                      } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-blue hover:border-blue hover:text-white`}
+                      } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-red-dark hover:border-blue hover:text-white`}
                     >
                       <svg
                         className="fill-current"
@@ -240,9 +240,9 @@ const ShopWithSidebar = () => {
                       aria-label="button for product list tab"
                       className={`${
                         productStyle === "list"
-                          ? "bg-blue border-blue text-white"
+                          ? "bg-red-dark border-blue text-white"
                           : "text-dark bg-gray-1 border-gray-3"
-                      } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-blue hover:border-blue hover:text-white`}
+                      } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-red-dark hover:border-blue hover:text-white`}
                     >
                       <svg
                         className="fill-current"
@@ -319,7 +319,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] bg-blue text-white hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] bg-red-dark text-white hover:text-white hover:bg-red-dark"
                       >
                         1
                       </a>
@@ -328,7 +328,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         2
                       </a>
@@ -337,7 +337,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         3
                       </a>
@@ -346,7 +346,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         4
                       </a>
@@ -355,7 +355,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         5
                       </a>
@@ -364,7 +364,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         ...
                       </a>
@@ -373,7 +373,7 @@ const ShopWithSidebar = () => {
                     <li>
                       <a
                         href="#"
-                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-blue"
+                        className="flex py-1.5 px-3.5 duration-200 rounded-[3px] hover:text-white hover:bg-red-dark"
                       >
                         10
                       </a>
@@ -384,7 +384,7 @@ const ShopWithSidebar = () => {
                         id="paginationLeft"
                         aria-label="button for pagination left"
                         type="button"
-                        className="flex items-center justify-center w-8 h-9 ease-out duration-200 rounded-[3px] hover:text-white hover:bg-blue disabled:text-gray-4"
+                        className="flex items-center justify-center w-8 h-9 ease-out duration-200 rounded-[3px] hover:text-white hover:bg-red-dark disabled:text-gray-4"
                       >
                         <svg
                           className="fill-current"
