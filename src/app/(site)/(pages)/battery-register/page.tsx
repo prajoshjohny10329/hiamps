@@ -35,14 +35,10 @@ export default function BatteryRegister() {
     <>
     {/* <!-- ===== Breadcrumb Section Start ===== --> */}
       <section>
-        <Breadcrumb title={"Battery Registration"} pages={["Battery Registration"]} />
+        <Breadcrumb title={"Product Registration"} pages={["Product Registration"]} />
       </section>
       {/* <!-- ===== Breadcrumb Section End ===== --> */}
     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
-      <h2 className="text-2xl text-red-dark font-semibold mb-4 text-center">
-        Battery Registration
-      </h2>
-
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -50,7 +46,7 @@ export default function BatteryRegister() {
           placeholder="Serial Number"
           value={form.serialNumber}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
           required
         />
 
@@ -60,7 +56,7 @@ export default function BatteryRegister() {
           placeholder="Full Name"
           value={form.userName}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
           required
         />
 
@@ -70,7 +66,7 @@ export default function BatteryRegister() {
           placeholder="Phone Number"
           value={form.phone}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
           required
         />
 
@@ -80,7 +76,7 @@ export default function BatteryRegister() {
           placeholder="Email (optional)"
           value={form.email}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
         />
 
         <input
@@ -89,7 +85,7 @@ export default function BatteryRegister() {
           placeholder="Product Type"
           value={form.productType}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
           required
         />
 
@@ -98,7 +94,7 @@ export default function BatteryRegister() {
           name="purchaseDate"
           value={form.purchaseDate}
           onChange={handleChange}
-          className="w-full border p-2 rounded"
+          className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none duration-200"
           required
         />
 

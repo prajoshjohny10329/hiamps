@@ -35,9 +35,9 @@ export const adminMenuData: Menu[] = [
   },
   {
     id: 3,
-    title: "Contact",
+    title: "Warranties",
     newTab: false,
-    path: "/contact",
+    path: "/admin/warranties",
   },
   {
     id: 6,

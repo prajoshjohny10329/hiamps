@@ -77,65 +77,72 @@ export default function WarrantyPage() {
         {result && (
           <div>
             <div
-  id="warranty-card"
-  className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans max-w-sm mx-auto mt-4"
-  style={{
-    backgroundImage: "url('/images/logo/logo.PNG')",
-    backgroundSize: "120px",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
->
-  {/* Logo */}
-  <div className="flex justify-center mb-3">
-    <img src="/images/logo/logo.PNG" alt="HiAmps Logo" className="w-24 h-auto" />
-  </div>
+              id="warranty-card"
+              className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans max-w-sm mx-auto mt-4"
+              style={{
+                backgroundImage: "url('/images/logo/logo.PNG')",
+                backgroundSize: "120px",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              {/* Logo */}
+              <div className="flex justify-center mb-3">
+                <img
+                  src="/images/logo/logo.PNG"
+                  alt="HiAmps Logo"
+                  className="w-24 h-auto"
+                />
+              </div>
 
-  {/* Header */}
-  <h2 className="text-2xl font-bold text-center text-blue-700 mb-2 uppercase">
-    Warranty Certificate
-  </h2>
-  <p className="text-center text-sm text-gray-500 mb-4">
-    HiAmps Batteries — Powering Performance
-  </p>
+              {/* Header */}
+              <h2 className="text-2xl font-bold text-center text-blue-700 mb-2 uppercase">
+                Warranty Certificate
+              </h2>
+              <p className="text-center text-sm text-gray-500 mb-4">
+                HiAmps Batteries — Powering Performance
+              </p>
 
-  {/* Body */}
-  <div className="space-y-2 text-sm">
-    <div className="flex justify-between border-b border-gray-200 pb-1">
-      <span className="font-medium">Customer Name:</span>
-      <span>{result?.name}</span>
-    </div>
-    <div className="flex justify-between border-b border-gray-200 pb-1">
-      <span className="font-medium">Product:</span>
-      <span>{result?.product}</span>
-    </div>
-    <div className="flex justify-between border-b border-gray-200 pb-1">
-      <span className="font-medium">Serial No:</span>
-      <span>{serial}</span>
-    </div>
-    <div className="flex justify-between border-b border-gray-200 pb-1">
-      <span className="font-medium">Purchase Date:</span>
-      <span>{result?.purchaseDate}</span>
-    </div>
-    <div className="flex justify-between border-b border-gray-200 pb-1">
-      <span className="font-medium">Warranty Expiry:</span>
-      <span>{result?.expiryDate}</span>
-    </div>
-  </div>
+              {/* Body */}
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between border-b border-gray-200 pb-1">
+                  <span className="font-medium">Customer Name:</span>
+                  <span>{result?.name}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200 pb-1">
+                  <span className="font-medium">Product:</span>
+                  <span>{result?.product}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200 pb-1">
+                  <span className="font-medium">Serial No:</span>
+                  <span>{serial}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200 pb-1">
+                  <span className="font-medium">Purchase Date:</span>
+                  <span>{result?.purchaseDate}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200 pb-1">
+                  <span className="font-medium">Warranty Expiry:</span>
+                  <span>{result?.expiryDate}</span>
+                </div>
+              </div>
 
-  {/* Footer */}
-  <div className="mt-6 text-center text-xs text-gray-500">
-    <p>For service, contact HiAmps Customer Support</p>
-    <p>Kollam, Kerala | +91 98765 43210 | www.hiamps.com</p>
-  </div>
+              {/* Footer */}
+              <div className="mt-6 text-center text-xs text-gray-500">
+                <p>For service, contact HiAmps Customer Support</p>
+                <p>Kollam, Kerala | +91 98765 43210 | www.hiamps.com</p>
+              </div>
 
-  {/* Optional Signature */}
-  <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
-    <p>Authorized Signatory</p>
-    <img src="/signature.png" alt="Sign" className="w-16 opacity-80" />
-  </div>
-</div>
-
+              {/* Optional Signature */}
+              <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
+                <p>Authorized Signatory</p>
+                <img
+                  src="/signature.png"
+                  alt="Sign"
+                  className="w-16 opacity-80"
+                />
+              </div>
+            </div>
 
             <button
               onClick={handleDownload}
