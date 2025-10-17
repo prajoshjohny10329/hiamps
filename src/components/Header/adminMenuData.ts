@@ -24,6 +24,12 @@ export const adminMenuData: Menu[] = [
         title: "Add New Product",
         newTab: false,
         path: "/admin/products/add-product",
+      },
+      {
+        id: 23,
+        title: "Category",
+        newTab: false,
+        path: "/admin/category",
       }
     ]
   },
