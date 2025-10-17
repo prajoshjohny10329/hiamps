@@ -8,7 +8,7 @@ import Category from "@/models/Category";
 interface Product {
   _id: string;
   name: string;
-  category: { _id: string; name: string };
+  category: string;
   price: number;
   image: string;
 }
@@ -81,7 +81,7 @@ export default function AdminProductsPage() {
                   )}
                 </td>
                 <td className="p-3 border-b">{product.name}</td>
-                <td className="p-3 border-b">{product.category?.name}</td>
+                <td className="p-3 border-b">{product.category}</td>
                 <td className="p-3 border-b">₹{product.price}</td>
                 <td className="p-3 border-b text-center">
                   <button

@@ -1,11 +1,15 @@
-import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
-import Category from "@/models/Category";
 
 export async function GET() {
-  await connectDB();
-  // const products = await Product.find().populate("category", "name");
-  const products = await Product.find()
-  return NextResponse.json(products);
+  try {
+    await connectDB();
+    const products = await Product.find()
+    console.log(products);
+    
+    return Response.json(products, { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return Response.json({ error: "Failed to fetch products" }, { status: 500 });
+  }
 }

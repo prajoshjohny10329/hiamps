@@ -1,12 +1,12 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
-import { ICategory } from "./Category";
 
 export interface IProduct extends Document {
   name: string;
   description?: string;
   price?: number;
+  warranty?: number;
   image?: string;
-  category: mongoose.Types.ObjectId | ICategory;
+  category: string; 
   createdAt: Date;
   updatedAt: Date;
 }
@@ -16,8 +16,9 @@ const ProductSchema = new Schema<IProduct>(
     name: { type: String, required: true },
     description: String,
     price: Number,
+    warranty: Number,
     image: String,
-    category: { type: Schema.Types.ObjectId, ref: "Category" }, // ✅ Must match Category model name exactly
+    category: { type: String, required: true }, // ✅ simple string (not ObjectId)
   },
   { timestamps: true }
 );

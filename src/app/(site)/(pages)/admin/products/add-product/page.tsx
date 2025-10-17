@@ -65,9 +65,9 @@ export default function AddProductPage() {
     try {
       const res = await axios.post("/api/upload", formDataImage);
       setFormData((prev) => ({ ...prev, image: res.data.url }));
-      toast.success("✅ Image uploaded successfully!");
+      toast.success("✅ Product Image uploaded successfully!");
     } catch {
-      toast.error("❌ Upload failed");
+      toast.error("Product Image Upload failed");
     } finally {
       setUploading(false);
     }
@@ -77,11 +77,11 @@ export default function AddProductPage() {
     e.preventDefault();
     try {
       const res = await axios.post("/api/admin/products/add-products", formData);
-      alert("✅ Product added successfully!");
+      toast.success("Product added successfully!");
       console.log(res.data);
     } catch (err) {
       console.error(err);
-      alert("❌ Error adding product");
+      toast.error('Error adding product');
     }
   };
 

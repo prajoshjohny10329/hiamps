@@ -1,22 +1,18 @@
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
-import Category from "@/models/Category";
 
 export async function POST(req: Request) {
   try {
-    const { name, description, price, image, categoryName } = await req.json();
+    const { name, description, price, image, category, warranty } = await req.json();
 
-    if (!name || !categoryName) {
+
+    if (!name || !category) {
       return Response.json({ error: "Name and category are required" }, { status: 400 });
     }
 
     await connectDB();
 
-    // Check for existing category or create one
-    let category = await Category.findOne({ name: categoryName });
-    if (!category) {
-      category = await Category.create({ name: categoryName });
-    }
+    console.log(warranty);
 
     // Create product
     const product = await Product.create({
@@ -24,7 +20,8 @@ export async function POST(req: Request) {
       description,
       price,
       image,
-      category: category._id,
+      category,
+      warranty,
     });
 
     return Response.json(product, { status: 201 });
