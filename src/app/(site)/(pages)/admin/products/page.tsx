@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import Category from "@/models/Category";
+import Link from "next/link";
 
 interface Product {
   _id: string;
@@ -18,7 +19,6 @@ export default function AdminProductsPage() {
   const [loading, setLoading] = useState(true);
 
   console.log(products);
-  
 
   const fetchProducts = async () => {
     try {
@@ -35,17 +35,7 @@ export default function AdminProductsPage() {
     fetchProducts();
   }, []);
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this product?")) return;
-    try {
-      await axios.delete(`/api/products/${id}`);
-      setProducts(products.filter((p) => p._id !== id));
-    } catch (err) {
-      console.error("Error deleting product:", err);
-    }
-  };
-
-  if (loading) return <p className="text-center mt-10">Loading products...</p>;
+  if (loading) return <p className="text -center mt-10">Loading products...</p>;
 
   return (
     <div className="max-w-6xl mx-auto p-6 mt-[200px]">
@@ -84,12 +74,12 @@ export default function AdminProductsPage() {
                 <td className="p-3 border-b">{product.category}</td>
                 <td className="p-3 border-b">₹{product.price}</td>
                 <td className="p-3 border-b text-center">
-                  <button
-                    onClick={() => handleDelete(product._id)}
-                    className="px-3 py-1 text-sm bg-red text-white rounded hover:bg-red-600"
+                  <Link
+                    href={`/admin/products/${product._id}`}
+                    className="bg-blue text-white px-3 py-1 rounded"
                   >
-                    Delete
-                  </button>
+                    View
+                  </Link>
                 </td>
               </tr>
             ))}
