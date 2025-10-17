@@ -9,9 +9,9 @@ export const menuData: Menu[] = [
   },
   {
     id: 3,
-    title: "Product",
+    title: "Products",
     newTab: false,
-    path: "/Product",
+    path: "/products",
   },
   {
     id: 3,

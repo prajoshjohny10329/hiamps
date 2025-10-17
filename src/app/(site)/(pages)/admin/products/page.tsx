@@ -18,8 +18,6 @@ export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(products);
-
   const fetchProducts = async () => {
     try {
       const res = await axios.get("/api/admin/products");
