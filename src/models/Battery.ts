@@ -1,6 +1,20 @@
-import mongoose, { Schema, models } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
 
-const batterySchema = new Schema(
+// 1️⃣ Define an interface for your document
+export interface IBattery extends Document {
+  serialNumber: string;
+  userName: string;
+  phone: string;
+  email?: string;
+  productType: string;
+  purchaseDate: Date;
+  warrantyYears: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// 2️⃣ Define your schema using the interface
+const batterySchema = new Schema<IBattery>(
   {
     serialNumber: { type: String, required: true, unique: true },
     userName: { type: String, required: true },
@@ -13,5 +27,8 @@ const batterySchema = new Schema(
   { timestamps: true }
 );
 
-const Battery = models.Battery || mongoose.model("Battery", batterySchema);
+// 3️⃣ Explicitly type your model to avoid union issues
+const Battery: Model<IBattery> =
+  mongoose.models.Battery || mongoose.model<IBattery>("Battery", batterySchema);
+
 export default Battery;

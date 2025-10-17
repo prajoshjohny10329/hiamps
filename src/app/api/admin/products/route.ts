@@ -5,6 +5,7 @@ import Category from "@/models/Category";
 
 export async function GET() {
   await connectDB();
-  const products = await Product.find().populate("category", "name");
+  // const products = await Product.find().populate("category", "name");
+  const products = await Product.find()
   return NextResponse.json(products);
 }

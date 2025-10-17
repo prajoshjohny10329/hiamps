@@ -1,6 +1,7 @@
 "use client";
 import { useState, FormEvent } from "react";
 import axios from "axios";
+import Breadcrumb from "@/components/Common/Breadcrumb";
 
 interface ProductForm {
   name: string;
@@ -57,22 +58,98 @@ export default function AddProductPage() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg mt-[200px]">
-      <h1 className="text-2xl font-semibold mb-4">Add New Product</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input name="name" placeholder="Product Name" onChange={handleChange} className="border p-2 rounded" required />
-        <input name="description" placeholder="Description" onChange={handleChange} className="border p-2 rounded" />
-        <input name="price" type="number" placeholder="Price" onChange={handleChange} className="border p-2 rounded" />
-        <input name="categoryName" placeholder="Category" onChange={handleChange} className="border p-2 rounded" required />
+    <>
+      <Breadcrumb title={"Add New Product"} pages={["Add New Product"]} />
+      <section className="overflow-hidden py-20 bg-gray-2">
+        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+          <div className="flex flex-col xl:flex-row gap-7.5">
+            <div className=" w-full bg-white rounded-xl shadow-1 p-4 sm:p-7.5 xl:p-10">
+              <form>
+                <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
+                  <div className="w-full">
+                    <label htmlFor="Product Name" className="block mb-2.5">
+                      First Name <span className="text-red">*</span>
+                    </label>
 
-        <input type="file" accept="image/*" onChange={handleImageUpload} className="border p-2 rounded" />
-        {uploading && <p className="text-sm text-gray-500">Uploading...</p>}
-        {formData.image && (
-          <img src={formData.image} alt="Preview" className="w-32 h-32 object-cover rounded mt-2" />
-        )}
+                    <input
+                      type="text"
+                      name="Product Name"
+                      id="Product Name"
+                      placeholder="Jhon"
+                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    />
+                  </div>
 
-        <button type="submit" className="bg-blue-600 text-white py-2 rounded">Add Product</button>
-      </form>
-    </div>
+                  <div className="w-full">
+                    <label htmlFor="lastName" className="block mb-2.5">
+                      Last Name <span className="text-red">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      placeholder="Deo"
+                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
+                  <div className="w-full">
+                    <label htmlFor="subject" className="block mb-2.5">
+                      Subject
+                    </label>
+
+                    <input
+                      type="text"
+                      name="subject"
+                      id="subject"
+                      placeholder="Type your subject"
+                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    />
+                  </div>
+
+                  <div className="w-full">
+                    <label htmlFor="phone" className="block mb-2.5">
+                      Phone
+                    </label>
+
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      placeholder="Enter your phone"
+                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-7.5">
+                  <label htmlFor="message" className="block mb-2.5">
+                    Message
+                  </label>
+
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows={5}
+                    placeholder="Type your message"
+                    className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="inline-flex font-medium text-white bg-red-dark py-3 px-7 rounded-md ease-out duration-200 hover:bg-red-dark-dark"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
