@@ -1,4 +1,5 @@
 "use client";
+import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useEffect, useState } from "react";
 
 interface Battery {
@@ -30,6 +31,8 @@ export default function AdminPage() {
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 
   return (
+    <section>
+      <Breadcrumb title={"Admin DashBoard"} pages={["Admin DashBoard"]} />
     <div className="p-6 max-w-6xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center">
         Registered Batteries
@@ -76,5 +79,6 @@ export default function AdminPage() {
         </div>
       )}
     </div>
+    </section>
   );
 }
