@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
+
 
 interface Product {
   _id: string;
@@ -35,7 +37,9 @@ export default function ProductDetailPage() {
       <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
 
       {product.image && (
-        <img
+        <Image
+          width={300}
+          height={64}
           src={product.image}
           alt={product.name}
           className="w-full h-64 object-cover rounded mb-6"

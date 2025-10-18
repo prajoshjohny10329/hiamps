@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import Image from "next/image";
+
 
 export default function WarrantyCheck() {
   const [serial, setSerial] = useState("");
@@ -143,7 +145,7 @@ export default function WarrantyCheck() {
             >
               {/* Logo */}
               <div className="flex justify-center mb-3">
-                <img
+                <Image
                   src="/images/logo/logo.PNG"
                   alt="HiAmps Logo"
                   className="w-24 h-auto"
@@ -204,7 +206,7 @@ export default function WarrantyCheck() {
               {/* Optional Signature */}
               <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
                 <p>Authorized Signatory</p>
-                <img
+                <Image
                   src="/signature.png"
                   alt="Sign"
                   className="w-16 opacity-80"

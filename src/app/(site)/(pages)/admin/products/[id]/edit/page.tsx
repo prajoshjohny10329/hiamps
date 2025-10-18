@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
+
 
 interface Product {
   _id: string;
@@ -125,7 +127,7 @@ export default function EditProductPage() {
             </div>
           )}
           {formData.image && (
-            <img
+            <Image
               src={formData.image}
               alt="Preview"
               className="w-32 h-32 object-cover rounded mt-3 border"

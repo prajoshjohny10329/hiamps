@@ -3,6 +3,7 @@ import { useState, useEffect, FormEvent } from "react";
 import axios from "axios";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 interface Category {
   _id: string;
@@ -196,7 +197,7 @@ export default function AddProductPage() {
               )}
 
               {formData.image && !uploading && (
-                <img
+                <Image
                   src={formData.image}
                   alt="Preview"
                   className="w-32 h-32 object-cover rounded mt-2 border"

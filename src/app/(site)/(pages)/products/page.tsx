@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
+
 
 interface Product {
   _id: string;
@@ -48,7 +50,9 @@ export default function UserProductsPage() {
             key={product._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col"
           >
-            <img
+            <Image
+            width={48}
+            height={48}
               src={product.image || "/placeholder.png"}
               alt={product.name}
               className="w-full h-48 object-cover"

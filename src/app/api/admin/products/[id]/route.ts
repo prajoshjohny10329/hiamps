@@ -2,12 +2,13 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
     console.log('hi');
     
   await connectDB();
   try {
-    const product = await Product.findById(params.id);
+    const { id } = await context.params;
+    const product = await Product.findById(id);
     console.log(product);
     
     if (!product) {
