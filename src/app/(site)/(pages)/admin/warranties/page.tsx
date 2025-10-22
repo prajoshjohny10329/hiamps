@@ -33,9 +33,9 @@ export default function AdminWarranties() {
               key={item._id}
               className={`${!item.viewed ? "bg-yellow-50" : ""} border-b`}
             >
+              <td className="p-2">{item.serialNumber}</td>
               <td className="p-2">{item.userName}</td>
               <td className="p-2">{item.phone}</td>
-              <td className="p-2">{item.category?.name}</td>
               <td className="p-2">{new Date(item.purchaseDate).toLocaleDateString()}</td>
               <td className="p-2">
                 {!item.viewed ? (

@@ -55,7 +55,7 @@ const HeroCarousal = () => {
 
           <div>
             <Image
-              src="/images/hero/hero-01.png"
+              src="/images/pages/slider-1.webp"
               alt="headphone"
               width={351}
               height={358}

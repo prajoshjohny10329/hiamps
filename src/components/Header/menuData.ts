@@ -8,10 +8,36 @@ export const menuData: Menu[] = [
     path: "/",
   },
   {
-    id: 3,
+    id: 2,
     title: "Products",
     newTab: false,
     path: "/products",
+    submenu: [
+      {
+        id: 21,
+        title: "Power Backup Batteries",
+        newTab: false,
+        path: "/product/power-backup-batteries",
+      },
+      {
+        id: 22,
+        title: "Inverter/UPS",
+        newTab: false,
+        path: "/product/inverter-ups",
+      },
+      {
+        id: 23,
+        title: "Lithium Batteries",
+        newTab: false,
+        path: "/product/lithium-batteries",
+      },
+      {
+        id: 23,
+        title: "UPS Battery Cabinet",
+        newTab: false,
+        path: "/product/ups-battery-cabinet",
+      },
+    ]
   },
   {
     id: 3,
