@@ -12,6 +12,7 @@ import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
 import { PreviewSliderProvider } from "../context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
+import { SessionProvider } from "next-auth/react";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
@@ -40,7 +41,7 @@ export default function RootLayout({
                 <ModalProvider>
                   <PreviewSliderProvider>
                     <Header />
-                    {children}
+                    <SessionProvider>{children}</SessionProvider>
                       <Toaster position="bottom-right" />
                     <QuickViewModal />
                     <CartSidebarModal />
