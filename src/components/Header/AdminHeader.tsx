@@ -118,8 +118,6 @@ const AdminHeader = () => {
             <div className="flex w-full lg:w-auto justify-between items-center gap-5">
               <div className="flex items-center gap-5">
                  <AdminProfile />
-
-                
               </div>
 
               {/* <!-- Hamburger Toggle BTN --> */}

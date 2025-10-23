@@ -6,8 +6,9 @@ export default withAuth({
       // Only allow access if token email is in admin list
       const ADMIN_EMAILS = [
         "prajoshjohny10329@gmail.com",
-        "admin2@gmail.com",
-        "admin3@gmail.com",
+        "mssujith00@gmail.com",
+        "msbatteryparts@ymail.com",
+        "Sunriseindustriesbng@gmail.com",
       ];
       return !!token?.email && ADMIN_EMAILS.includes(token.email);
     },

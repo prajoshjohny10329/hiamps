@@ -157,3 +157,5 @@ URLs:
 /terms-of-service → Terms of Service
 
 ✅ Suggested URL Structure Summary:
+
+npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
