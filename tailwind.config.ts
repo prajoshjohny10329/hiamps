@@ -51,7 +51,7 @@ const config: Config = {
         7: "#374151",
       },
       blue: {
-        DEFAULT: "#ff0000",
+        DEFAULT: "#3C50E0",
         dark: "#1C3FB7",
         light: "#5475E5",
         "light-2": "#8099EC",

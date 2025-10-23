@@ -29,25 +29,25 @@ export const menuData: Menu[] = [
         id: 21,
         title: "Power Backup Batteries",
         newTab: false,
-        path: "/product/power-backup-batteries",
+        path: "/products/power-backup-batteries",
       },
       {
         id: 22,
         title: "Inverter/UPS",
         newTab: false,
-        path: "/product/inverter-ups",
+        path: "/products/inverter-ups",
       },
       {
         id: 23,
         title: "Lithium Batteries",
         newTab: false,
-        path: "/product/lithium-batteries",
+        path: "/products/lithium-batteries",
       },
       {
         id: 23,
         title: "UPS Battery Cabinet",
         newTab: false,
-        path: "/product/ups-battery-cabinet",
+        path: "/products/ups-battery-cabinet",
       },
     ]
   },
@@ -65,6 +65,26 @@ export const menuData: Menu[] = [
       },
       {
         id: 32,
+        title: "Check Warranty",
+        newTab: false,
+        path: "/warranty-check",
+      },
+    ]
+  },
+  {
+    id: 4,
+    title: "User Guide",
+    newTab: false,
+    path: "/user-guide",
+    submenu: [
+      {
+        id: 41,
+        title: "Installation & Maintenance",
+        newTab: false,
+        path: "/user-guide/installation-guide",
+      },
+      {
+        id: 42,
         title: "Check Warranty",
         newTab: false,
         path: "/warranty-check",
