@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thunder Preloader</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        background-color: white;
+        font-family: sans-serif;
+      }
+
+      /* Preloader container */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #d60000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        overflow: hidden;
+      }
+
+      /* Lightning bolt */
+      .lightning {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        fill: white;
+        opacity: 0;
+        transform: scale(0.8);
+        z-index: 3;
+      }
+
+      .strike {
+        animation: strike 0.2s ease-in-out forwards;
+      }
+
+      @keyframes strike {
+        0% {
+          opacity: 0;
+          transform: scale(0.8) rotate(5deg);
+        }
+        40% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.1) rotate(-5deg);
+        }
+      }
+
+      /* Thunder flash background */
+      #preloader.flash {
+        animation: flash 0.15s ease-in-out;
+      }
+
+      @keyframes flash {
+        0% {
+          background-color: #d60000;
+        }
+        50% {
+          background-color: #ffffff;
+        }
+        100% {
+          background-color: #d60000;
+        }
+      }
+
+      /* Side destroy panels */
+      .side {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #d60000;
+        z-index: 2;
+        transition: transform 1.2s ease-in-out;
+      }
+
+      .side.left {
+        left: 0;
+      }
+
+      .side.right {
+        right: 0;
+      }
+
+      .side.left.destroy {
+        transform: translateX(-100%);
+      }
+
+      .side.right.destroy {
+        transform: translateX(100%);
+      }
+
+      /* Logo animation */
+      #preloader img {
+        width: 130px;
+        height: auto;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: showLogo 1s forwards 0.6s;
+        z-index: 3;
+      }
+
+      @keyframes showLogo {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Website content */
+      #content {
+        display: none;
+        text-align: center;
+        padding: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="side left"></div>
+      <div class="side right"></div>
+
+      <!-- Lightning bolt -->
+      <svg
+        class="lightning"
+        viewBox="0 0 64 128"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon points="24,0 0,72 24,72 16,128 64,48 40,48 56,0" />
+      </svg>
+
+      <!-- Logo -->
+      <img src="logo.png" alt="Website Logo" />
+    </div>
+
+    <div id="content">
+      <h1>Welcome to My Website ⚡</h1>
+    </div>
+
+    <script>
+      const preloader = document.getElementById("preloader");
+      const lightning = document.querySelector(".lightning");
+      const leftSide = document.querySelector(".side.left");
+      const rightSide = document.querySelector(".side.right");
+      const content = document.getElementById("content");
+
+      // Step 1: Lightning + flash
+      setTimeout(() => {
+        lightning.classList.add("strike");
+        preloader.classList.add("flash");
+      }, 300);
+
+      // Step 2: Side destroy effect
+      setTimeout(() => {
+        leftSide.classList.add("destroy");
+        rightSide.classList.add("destroy");
+      }, 1300);
+
+      // Step 3: End preloader and show content (after 3s)
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+      }, 2600);
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        content.style.display = "block";
+        document.body.style.overflow = "auto";
+      }, 3000);
+    </script>
+  </body>
+</html>
