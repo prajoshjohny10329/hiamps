@@ -104,9 +104,9 @@ const Header = () => {
                 <span className="block text-2xs text-dark-4 uppercase">
                   24/7 SUPPORT
                 </span>
-                <p className="font-medium text-custom-sm text-dark">
-                  (+965) 7492-3477
-                </p>
+                <a href="tel:+91 994 500 4857" className="font-medium text-custom-sm text-dark">
+                  +91 994 500 4857
+                </a>
               </div>
             </div>
 

@@ -32,16 +32,16 @@ export const menuData: Menu[] = [
         path: "/products/power-backup-batteries",
       },
       {
-        id: 22,
-        title: "Inverter/UPS",
-        newTab: false,
-        path: "/products/inverter-ups",
-      },
-      {
         id: 23,
         title: "Lithium Batteries",
         newTab: false,
         path: "/products/lithium-batteries",
+      },
+      {
+        id: 22,
+        title: "Inverter/UPS",
+        newTab: false,
+        path: "/products/inverter-ups",
       },
       {
         id: 23,

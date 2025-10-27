@@ -14,7 +14,7 @@ export default function AboutPage() {
       <Breadcrumb title={"About Us"} pages={["About-us"]} />
 
       {/* <!-- Main Heading --> */}
-      <section className="max-w-[1170px] w-full mx-auto px-4 py-20 sm:px-8 xl:px-0">
+      <section  className="max-w-[1170px] w-full mx-auto px-4 py-20 sm:px-8 xl:px-0">
         <div className="flex  flex-col md:flex-row">
         <div className="flex-1 ">
           <h2 className="text-3xl md:text-5xl font-bold mb-2 text-black ">
@@ -48,6 +48,208 @@ export default function AboutPage() {
         </div>
       </section>
 
+       {/* images  */}
+      <section className="mb-10">
+        <div className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9">
+          <div className="flex items-center gap-8 xl:gap-[30px]">
+            {/* Left Images Section */}
+            <div className="animate_left relative hidden gap-8 md:flex md:w-1/2">
+              <div className="relative">
+                <img
+                  alt="Shape"
+                  loading="lazy"
+                  width={36}
+                  height={66}
+                  decoding="async"
+                  className="absolute -left-5 top-5"
+                  style={{ color: "transparent" }}
+                  src="/images/shape/shape-05.svg"
+                />
+                <img
+                  alt="About"
+                  loading="lazy"
+                  width={274}
+                  height={323}
+                  decoding="async"
+                  className="mb-8 aspect-[274/323] rounded-lg object-cover"
+                  style={{ color: "transparent" }}
+                  src="/images/pages/slider-1.webp"
+                />
+                <img
+                  alt="About"
+                  loading="lazy"
+                  width={290}
+                  height={343}
+                  decoding="async"
+                  className="aspect-[290/343] rounded-lg object-cover"
+                  style={{ color: "transparent" }}
+                  src="/images/pages/slider-1.webp"
+                />
+              </div>
+
+              <div>
+                <img
+                  alt="Shape"
+                  loading="lazy"
+                  width={43}
+                  height={86}
+                  decoding="async"
+                  style={{ color: "transparent" }}
+                  src="/images/shape/shape-06.svg"
+                />
+                <img
+                  alt="About"
+                  loading="lazy"
+                  width={290}
+                  height={485}
+                  decoding="async"
+                  className="mb-5 mt-[7.5px] aspect-[273/457] rounded-lg object-cover"
+                  style={{ color: "transparent" }}
+                  src="/images/pages/slider-1.webp"
+                />
+                <img
+                  alt="Shape"
+                  loading="lazy"
+                  width={198}
+                  height={99}
+                  decoding="async"
+                  className="mx-auto"
+                  style={{ color: "transparent" }}
+                  src="/images/shape/shape-07.svg"
+                />
+              </div>
+            </div>
+
+            {/* Right Text Section */}
+            <div className="animate_right md:w-1/2">
+              <h4 className="mb-5 text-xl font-medium text-red-dark">Why Choose Us</h4>
+              <h2 className="mb-[7.5px] text-3xl font-semibold text-black dark:text-white lg:text-4xl xl:text-title-xl">
+                Quality Assurance
+              </h2>
+              <p className="lg:w-[95%] text-black mt-3">
+                At Hi-Amps, quality is our top priority. Our tubular batteries are
+                built to last, with many delivering over <strong>10+ years</strong> of
+                service under proper maintenance. Regular upkeep ensures consistent
+                performance and longevity, staying true to our promise of{" "}
+                <em>“Quality Beyond Your Need”</em>.
+              </p>
+              <a className="mt-10 inline-flex items-center gap-[6.5px]" href="#">
+                <span className="relative z-[1] flex h-[50px] w-[50px] items-center justify-center rounded-full bg-red-dark">
+                  <span className="absolute -z-[1] inline-flex h-full w-full animate-ping rounded-full bg-red-dark opacity-75"></span>
+                  <img
+                    alt="Play"
+                    loading="lazy"
+                    width={24}
+                    height={24}
+                    decoding="async"
+                    style={{ color: "transparent" }}
+                    src="/images/icons/icon-play.svg"
+                  />
+                </span>
+                <span className="text-black dark:text-white ms-3">SEE HOW WE WORK</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="pt-14 sm:pt-20 lg:pt-[130px]">
+        <div className="px-4 xl:container">
+          <div className="relative mx-auto mb-12 max-w-[620px] pt-6 text-center md:mb-20 lg:pt-16">
+            <span className="title">ABOUT US</span>
+            <h2 className="mb-5 font-heading text-3xl font-semibold text-dark dark:text-white sm:text-4xl md:text-[50px] md:leading-[60px]">
+              Know Details About Our Company
+            </h2>
+            <p className="text-base text-dark-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
+            </p>
+          </div>
+
+          <div className="relative z-10 overflow-hidden rounded-sm px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+            <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
+
+            
+
+            <div className="w-full">
+      <div className="-mx-4 flex w-full flex-wrap items-center pt-[70px] flex-row-reverse">
+        {/* Left Image Section */}
+        <div className="w-full px-4 lg:w-1/2">
+          <div className="relative z-30 mb-14 h-[490px] max-w-[600px] lg:mb-0">
+            {/* First Image */}
+            <div className="aspect-[86/121] absolute left-0 top-0 w-full max-w-[344px]">
+              <Image
+                src="/images/pages/slider-1.webp"
+                alt="about image 1"
+                fill
+                className="object-cover"
+                priority={false}
+              />
+            </div>
+
+            {/* Second Image */}
+            <div className="aspect-[53/66] absolute right-0 top-1/2 z-10 w-full max-w-[315px] -translate-y-1/2">
+              <Image
+                src="/images/pages/slider-1.webp"
+                alt="about image 2"
+                fill
+                className="object-cover"
+                priority={false}
+              />
+              <div className="border-primary/10 bg-primary/5 absolute -left-5 -top-5 -z-10 h-full w-full border backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
+            </div>
+
+            {/* Decorative SVG */}
+            <div className="absolute right-0 top-24 z-40">
+              <svg
+                width="72"
+                height="38"
+                viewBox="0 0 72 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M62.0035 2.04985C59.6808 1.76671 57.4524 2.70929 55.1508 4.68209C51.3631 7.92863 44.7908 9.54366 38.8668 4.69678C36.329 2.6204 34.117 2.29213 32.2894 2.59672C30.3972 2.91209 28.8057 3.92088 27.5547 4.75487C25.5734 6.07577 23.3915 7.46379 20.8786 7.78953C18.2847 8.12577 15.515 7.32034 12.3598 4.69105C9.71804 2.48955 7.45748 2.0661 5.72104 2.33325C3.94436 2.6066 2.56003 3.6273 1.76341 4.56877C1.40666 4.99037 0.775686 5.04295 0.354079 4.68621C-0.0675277 4.32946 -0.120109 3.69849 0.236635 3.27688C1.27334 2.05168 3.0643 0.71846 5.41692 0.356509C7.80979 -0.0116349 10.6326 0.648246 13.6402 3.1546C16.485 5.52529 18.7154 6.05321 20.6215 5.80612C22.6086 5.54854 24.4266 4.43657 26.4453 3.09078L27 3.92282L26.4453 3.09078C27.6943 2.25809 29.6028 1.0169 31.9606 0.623935C34.383 0.220203 37.1711 0.725274 40.1333 3.14886C45.1548 7.25733 50.6369 5.9169 53.8492 3.16356C56.3795 0.994798 59.1512 -0.312658 62.2455 0.0645503C65.3089 0.43799 68.4333 2.43425 71.7557 6.26783C72.1174 6.68518 72.0723 7.31674 71.655 7.67845C71.2376 8.04015 70.606 7.99504 70.2443 7.57769C67.0668 3.91125 64.3571 2.33677 62.0035 2.04985Z"
+                  fill="#4A6CF7"
+                />
+                {/* Other SVG paths truncated for brevity */}
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Text Section */}
+        <div className="w-full px-4 lg:w-1/2">
+          <div className="max-w-[565px] lg:ml-auto">
+            <h2 className="font-heading text-dark mb-8 text-2xl font-bold sm:text-[40px] sm:leading-[50px] dark:text-white">
+              Built-with Latest Tools and Technologies
+            </h2>
+            <p className="mb-6 text-base text-dark-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              condimentum sapien ac leo cursus dignissim. In ac lectus vel orci
+              accumsan ultricies at in libero accumsan.
+            </p>
+            <p className="mb-6 text-base text-dark-text">
+              Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
+              nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
+            </p>
+            <p className="text-base text-dark-text">
+              Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
+              nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+
+
       {/* <!-- Company Overview --> */}
 
       {/* <!-- Manufacturing & Capacity --> */}
@@ -79,19 +281,6 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* <!-- Quality Assurance --> */}
-      <div className="mb-8">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
-          Quality Assurance
-        </h2>
-        <p className="text-black leading-relaxed">
-          At Hi-Amps, quality is our top priority. Our tubular batteries are
-          built to last, with many delivering over <strong>10+ years</strong> of
-          service under proper maintenance. Regular upkeep ensures consistent
-          performance and longevity, staying true to our promise of{" "}
-          <em>“Quality Beyond Your Need”</em>.
-        </p>
-      </div>
 
       {/* <!-- Future Vision --> */}
       <div className="mb-8">
