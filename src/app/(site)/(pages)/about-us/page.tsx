@@ -13,6 +13,9 @@ export default function AboutPage() {
     <section id="about-us" className="mx-auto py-6 ">
       <Breadcrumb title={"About Us"} pages={["About-us"]} />
 
+      <div className="h-14 bg-gradient-to-r from-red to-red-dark"></div>
+
+
       {/* <!-- Main Heading --> */}
       <section  className="max-w-[1170px] w-full mx-auto px-4 py-20 sm:px-8 xl:px-0">
         <div className="flex  flex-col md:flex-row">
@@ -245,6 +248,156 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section id="about" className="relative pt-[150px]">
+      <div className="container lg:max-w-[1120px]">
+        {/* First Row */}
+        <div className="-mx-4 flex flex-wrap items-center justify-between">
+          {/* Left Image */}
+          <div className="w-full px-4 lg:w-1/2">
+            <div
+              className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
+              data-wow-delay=".2s"
+            >
+              <Image
+                src="/images/about/about-1-light.png"
+                alt="About Image"
+                width={470}
+                height={594}
+                className="mx-auto max-w-full"
+              />
+              <div className="absolute top-0 right-5 -z-10">
+                {/* Decorative SVG */}
+                <svg
+                  width="72"
+                  height="50"
+                  viewBox="0 0 72 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.8126 0.216481C21.8159 0.143661 21.8196 0.071493 21.8237 0C21.4747 7.63863 25.1425 21.8522 42.5976 21.0032C35.4678 21.503 21.3391 26.5685 21.822 42.8298C21.6005 35.7375 17.0094 21.7229 0.441399 21.645C7.47462 21.5363 20.8883 17.1617 21.8126 0.216481Z"
+                    fill="#7083F5"
+                  />
+                  <path
+                    d="M58.7832 24.2896C58.5804 28.7428 60.7811 37.271 71.2541 36.7616C66.9763 37.0614 58.499 40.1008 58.7888 49.8576C58.6559 45.6022 55.9013 37.1934 45.9605 37.1467C50.1803 37.0815 58.2286 34.4567 58.7832 24.2896Z"
+                    fill="#7ED8FF"
+                  />
+                </svg>
+              </div>
+              <div className="bg-gradient-1 absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className="w-full px-4 lg:w-1/2">
+            <div className="lg:ml-auto lg:max-w-[510px]">
+              <span className="text-primary mb-4 block text-lg font-medium md:text-[22px]">
+                Track Audience Activities
+              </span>
+              <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
+                Track Your Audience Activities
+              </h2>
+              <p className="text-body mb-[30px] text-base leading-relaxed text-gray-600">
+                Schedule your posts for times when your audience is most active.
+                Choose from our best-time predictions, or create your own
+                publishing schedule.
+              </p>
+
+              {/* Features */}
+              {[
+                {
+                  num: "01",
+                  title: "Lorem ipsum dolor.",
+                  desc: "Ut ultricies lacus non fermentum ultrices.",
+                },
+                {
+                  num: "02",
+                  title: "Lorem ipsum dolor.",
+                  desc: "Ut ultricies lacus non fermentum ultrices.",
+                },
+              ].map((item) => (
+                <div key={item.num} className="mb-[30px] flex items-center">
+                  <div className="mr-[22px] flex h-[60px] w-[60px] items-center justify-center rounded-full border border-gray-300 text-xl font-semibold text-black dark:text-white">
+                    {item.num}
+                  </div>
+                  <div>
+                    <h5 className="text-xl font-medium text-black dark:text-white">
+                      {item.title}
+                    </h5>
+                    <p className="text-body text-base text-gray-600">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Second Row */}
+        <div className="pt-[100px]">
+          <div className="-mx-4 flex flex-wrap items-center justify-between">
+            {/* Left Content */}
+            <div className="w-full px-4 lg:w-1/2">
+              <div className="lg:max-w-[510px]">
+                <span className="text-primary mb-4 block text-lg font-medium md:text-[22px]">
+                  Create Audience Reports
+                </span>
+                <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
+                  Know More About Your Audience
+                </h2>
+                <p className="text-body mb-[30px] text-base leading-relaxed text-gray-600">
+                  Schedule your posts for times when your audience is most
+                  active. Choose from our best-time predictions, or create your
+                  own publishing schedule.
+                </p>
+                <a
+                  href="#"
+                  className="bg-primary hover:bg-primary/90 inline-block rounded-md px-8 py-[10px] text-base font-medium text-white"
+                >
+                  Know More
+                </a>
+              </div>
+            </div>
+            
+
+            {/* Right Image */}
+            <div className="order-first w-full px-4 lg:order-last lg:w-1/2">
+              <div className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mr-0 lg:mb-0">
+                <Image
+                  src="/images/about/about-2-light.png"
+                  alt="About Image 2"
+                  width={470}
+                  height={594}
+                  className="mx-auto max-w-full"
+                />
+                <div className="absolute top-0 right-5 -z-10">
+                  {/* Decorative SVG 2 */}
+                  <svg
+                    width="72"
+                    height="50"
+                    viewBox="0 0 72 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.8126 0.216481C21.8159 0.143661 21.8196 0.071493 21.8237 0C21.4747 7.63863 25.1425 21.8522 42.5976 21.0032C35.4678 21.503 21.3391 26.5685 21.822 42.8298C21.6005 35.7375 17.0094 21.7229 0.441399 21.645C7.47462 21.5363 20.8883 17.1617 21.8126 0.216481Z"
+                      fill="#FF9996"
+                    />
+                    <path
+                      d="M58.7832 24.2896C58.5804 28.7428 60.7811 37.271 71.2541 36.7616C66.9763 37.0614 58.499 40.1008 58.7888 49.8576C58.6559 45.6022 55.9013 37.1934 45.9605 37.1467C50.1803 37.0815 58.2286 34.4567 58.7832 24.2896Z"
+                      fill="#FFCB78"
+                    />
+                  </svg>
+                </div>
+                <div className="bg-gradient-2 absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-pink-200 to-yellow-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
       

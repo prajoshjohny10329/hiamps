@@ -47,7 +47,7 @@ export const menuData: Menu[] = [
         id: 23,
         title: "UPS Battery Cabinet",
         newTab: false,
-        path: "/products/ups-battery-cabinet",
+        path: "/products/battery-cabinet",
       },
     ]
   },

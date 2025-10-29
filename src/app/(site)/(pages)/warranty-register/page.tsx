@@ -786,6 +786,7 @@ export default function WarrantyRegister() {
     phone: "",
     email: "",
     category: "",
+    ProductName: "",
     purchaseDate: "",
     state: "",
     district: "",
@@ -793,6 +794,7 @@ export default function WarrantyRegister() {
   });
 
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
   const [districts, setDistricts] = useState<string[]>([]);
 
   // Fetch categories
@@ -802,6 +804,14 @@ export default function WarrantyRegister() {
       .then((data) => setCategories(data))
       .catch(() => toast.error("Failed to load categories"));
   }, []);
+
+  useEffect(() => {
+  fetch("/api/products")
+    .then((res) => res.json())
+    .then((data) => setProducts(data))
+    .catch(() => toast.error("Failed to load product names"));
+}, []);
+
 
   // Handle input changes
   const handleChange = (
@@ -840,6 +850,7 @@ export default function WarrantyRegister() {
         phone: "",
         email: "",
         category: "",
+        ProductName: "",
         purchaseDate: "",
         state: "",
         district: "",
@@ -950,6 +961,26 @@ export default function WarrantyRegister() {
                       ))}
                     </select>
                   </div>
+                  <div className="w-full">
+                    <label htmlFor="productName" className="block mb-2.5">
+                      Product Name <span className="text-red">*</span>
+                    </label>
+
+                    <select
+                      name="productName"
+                      value={form.ProductName}
+                      onChange={handleChange}
+                      required
+                      className="rounded-md border border-gray-3 text-dark bg-white placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    >
+                      <option value="">Select You Product</option>
+                      {products.map((pro: any) => (
+                        <option key={pro.name} value={pro.name}>
+                          {pro.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
                   <div className="w-full">
@@ -1036,9 +1067,6 @@ export default function WarrantyRegister() {
                 </button>
                   </div>
                 </div>
-                
-
-                
               </form>
             </div>
           </div>
