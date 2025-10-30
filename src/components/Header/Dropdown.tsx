@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const Dropdown = ({ menuItem, stickyMenu }) => {
+const Dropdown = ({ menuItem, stickyMenu, toggleNavigation  }) => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const pathUrl = usePathname();
 
@@ -48,6 +48,11 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
         {menuItem.submenu.map((item, i) => (
           <li key={i}>
             <Link
+            onClick={() => {
+            if (window.innerWidth < 1284 && toggleNavigation) {
+              toggleNavigation(); // 👈 close menu when clicked on mobile
+            }
+          }}
               href={item.path}
               className={`flex text-custom-sm hover:text-red hover:bg-gray-1 py-[7px] px-4.5 ${
                 pathUrl === item.path && "text-red bg-gray-1"
