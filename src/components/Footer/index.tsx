@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -18,7 +19,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="tel:+919945004857" className="flex items-center gap-4.5 hover:text-red-dark">
+                <Link href="tel:+919945004857" className="flex items-center gap-4.5 hover:text-red-dark">
                   <svg
                     width="24"
                     height="24"
@@ -44,11 +45,11 @@ const Footer = () => {
                     />
                   </svg>
                   +91 994 500 4857
-                </a>
+                </Link>
               </li>
              
               <li>
-                <a href="#" className="flex items-center gap-4.5 hover:text-red-dark">
+                <Link href="#" className="flex items-center gap-4.5 hover:text-red-dark">
                   <svg
                     width="24"
                     height="24"
@@ -64,7 +65,7 @@ const Footer = () => {
                     />
                   </svg>
                   support@example.com
-                </a>
+                </Link>
               </li>
               
               <li className="flex gap-4.5 ">
@@ -94,71 +95,86 @@ const Footer = () => {
 
 
           <div className="w-full sm:w-auto">
-            <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Quick Link
-            </h2>
+  <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
+    Quick Link
+  </h2>
 
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/about-us">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/products">
-                  All Products
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/contact">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/support">
-                  Customer Support
-                </a>
-              </li>
-            </ul>
-          </div>
+  <ul className="flex flex-col gap-3">
+    <li>
+      <Link href="/" className="ease-out duration-200 hover:text-red">
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link href="/about-us" className="ease-out duration-200 hover:text-red">
+        About Us
+      </Link>
+    </li>
+    <li>
+      <Link href="/products" className="ease-out duration-200 hover:text-red">
+        All Products
+      </Link>
+    </li>
+    <li>
+      <Link href="/contact" className="ease-out duration-200 hover:text-red">
+        Contact Us
+      </Link>
+    </li>
+    <li>
+      <Link href="/support" className="ease-out duration-200 hover:text-red">
+        Customer Support
+      </Link>
+    </li>
+  </ul>
+</div>
 
           <div className="w-full sm:w-auto">
-            <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Products Links
-            </h2>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/products/power-backup-batteries">
-                  Backup Batteries
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/products/inverter-ups">
-                  Inverter/UPS
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/products/lithium-batteries">
-                  Lithium Batteries
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/products/ups-battery-cabinet">
-                  UPS Battery Cabinet
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-red" href="/user-guide">
-                  Users Guide
-                </a>
-              </li>
-            </ul>
-          </div>
+  <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
+    Products Links
+  </h2>
+  <ul className="flex flex-col gap-3">
+    <li>
+      <Link
+        href="/products/power-backup-batteries"
+        className="ease-out duration-200 hover:text-red"
+      >
+        Backup Batteries
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/products/inverter-ups"
+        className="ease-out duration-200 hover:text-red"
+      >
+        Inverter/UPS
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/products/lithium-batteries"
+        className="ease-out duration-200 hover:text-red"
+      >
+        Lithium Batteries
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/products/ups-battery-cabinet"
+        className="ease-out duration-200 hover:text-red"
+      >
+        UPS Battery Cabinet
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/user-guide"
+        className="ease-out duration-200 hover:text-red"
+      >
+        Users Guide
+      </Link>
+    </li>
+  </ul>
+</div>
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark lg:text-right">
@@ -168,7 +184,7 @@ const Footer = () => {
 
             <ul className="flex flex-col lg:items-end gap-3">
               <li>
-                <a
+                <Link
                   className="inline-flex items-center gap-3 py-[9px] pl-4 pr-7.5 text-white rounded-md bg-dark ease-out duration-200 hover:bg-opacity-95"
                   href="#"
                 >
@@ -192,11 +208,11 @@ const Footer = () => {
                     </span>
                     <p className="font-medium">App Store</p>
                   </div>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
+                <Link
                   className="inline-flex items-center gap-3 py-[9px] pl-4 pr-8.5 text-white rounded-md bg-red-dark ease-out duration-200 hover:bg-opacity-95"
                   href="#"
                 >
@@ -218,7 +234,7 @@ const Footer = () => {
                     <span className="block text-custom-xs"> Get in On </span>
                     <p className="font-medium">Google Play</p>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -236,49 +252,6 @@ const Footer = () => {
 
             <div className="flex flex-wrap items-center gap-4">
               <p className="font-medium">We Accept:</p>
-
-              <div className="flex flex-wrap items-center gap-6">
-                <a href="#" aria-label="payment system with visa card">
-                  <Image
-                    src="/images/payment/payment-01.svg"
-                    alt="visa card"
-                    width={66}
-                    height={22}
-                  />
-                </a>
-                <a href="#" aria-label="payment system with paypal">
-                  <Image
-                    src="/images/payment/payment-02.svg"
-                    alt="paypal"
-                    width={18}
-                    height={21}
-                  />
-                </a>
-                <a href="#" aria-label="payment system with master card">
-                  <Image
-                    src="/images/payment/payment-03.svg"
-                    alt="master card"
-                    width={33}
-                    height={24}
-                  />
-                </a>
-                <a href="#" aria-label="payment system with apple pay">
-                  <Image
-                    src="/images/payment/payment-04.svg"
-                    alt="apple pay"
-                    width={52.94}
-                    height={22}
-                  />
-                </a>
-                <a href="#" aria-label="payment system with google pay">
-                  <Image
-                    src="/images/payment/payment-05.svg"
-                    alt="google pay"
-                    width={56}
-                    height={22}
-                  />
-                </a>
-              </div>
             </div>
           </div>
         </div>
