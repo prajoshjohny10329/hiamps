@@ -7,6 +7,7 @@ import BestSeller from "./BestSeller";
 import CounDown from "./Countdown";
 import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
+import CounterSection from "@/app/(site)/(pages)/dummy/page";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <NewArrival />
       <PromoBanner />
       <BestSeller />
+      <CounterSection />
       <CounDown />
       <Testimonials />
       <Newsletter />
