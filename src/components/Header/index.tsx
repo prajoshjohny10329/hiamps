@@ -218,6 +218,7 @@ const Header = () => {
                         key={i}
                         menuItem={menuItem}
                         stickyMenu={stickyMenu}
+                        toggleNavigation={() => setNavigationOpen(!navigationOpen)}
                       />
                     ) : (
                       <li
@@ -225,6 +226,13 @@ const Header = () => {
                         className="group relative before:w-0 before:h-[3px] before:bg-red-dark before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full "
                       >
                         <Link
+                        
+                           onClick={() => {
+    if (window.innerWidth < 1284) {
+      // Only trigger onClick below 'lg' breakpoint (change to 768 for md)
+      setNavigationOpen(!navigationOpen);
+    }
+  }}
                           href={menuItem.path}
                           className={`hover:text-red text-custom-sm font-medium text-dark flex ${
                             stickyMenu ? "xl:py-4" : "xl:py-6"
