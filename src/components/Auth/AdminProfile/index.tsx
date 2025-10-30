@@ -14,8 +14,8 @@ export default function AdminProfile() {
           {/* Profile Image */}
           {session.user.image && (
             <Image
-                width={7}
-                height={7}
+                width={100}
+                height={100}
                 src={session.user.image}
                 alt={session.user.name || "Admin"}
                 className="w-7 h-7 rounded-full"

@@ -1,28 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import CustomSelect from "./CustomSelect";
 import Dropdown from "./Dropdown";
-import { useAppSelector } from "@/redux/store";
-import { useSelector } from "react-redux";
-import { selectTotalPrice } from "@/redux/features/cart-slice";
-import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
 import Image from "next/image";
 import { adminMenuData } from "./adminMenuData";
 import AdminProfile from "../Auth/AdminProfile";
 
 const AdminHeader = () => {
-  const [searchQuery, setSearchQuery] = useState("");
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-  const { openCartModal } = useCartModalContext();
 
-  const product = useAppSelector((state) => state.cartReducer.items);
-  const totalPrice = useSelector(selectTotalPrice);
 
-  const handleOpenCartModal = () => {
-    openCartModal();
-  };
 
   // Sticky menu
   const handleStickyMenu = () => {
@@ -36,17 +24,6 @@ const AdminHeader = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
   });
-
-  const options = [
-    { label: "All Categories", value: "0" },
-    { label: "Desktop", value: "1" },
-    { label: "Laptop", value: "2" },
-    { label: "Monitor", value: "3" },
-    { label: "Phone", value: "4" },
-    { label: "Watch", value: "5" },
-    { label: "Mouse", value: "6" },
-    { label: "Tablet", value: "7" },
-  ];
 
   return (
     <header
