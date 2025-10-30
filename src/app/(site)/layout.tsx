@@ -17,6 +17,7 @@ import { SessionProvider } from "next-auth/react";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
 import { Toaster } from "react-hot-toast";
+import IntroLoader from "@/components/Common/IntroLoader";
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
                     <Header />
                     <SessionProvider>
                       <PreLoader />
+                      <IntroLoader /> {/* 👈 Shown only when opening site */}
                       {children}
                       </SessionProvider>
                       <Toaster position="bottom-right" />
