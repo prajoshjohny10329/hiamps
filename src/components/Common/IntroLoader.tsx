@@ -1,24 +1,38 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function IntroLoader() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false); // Hide loader after 2.5 seconds
-    }, 2500);
-    return () => clearTimeout(timer);
+    // Check if the intro was already shown in this session
+    const hasSeenIntro = sessionStorage.getItem("seenIntro");
+
+    if (!hasSeenIntro) {
+      setShow(true);
+      const timer = setTimeout(() => {
+        setShow(false);
+        sessionStorage.setItem("seenIntro", "true");
+      }, 2500); // show for 2.5 seconds
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (!show) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white text-red transition-opacity duration-700 animate-fadeOut">
-      <h1 className="text-3xl md:text-5xl font-semibold tracking-wide animate-pulse">
-        Welcome To <span className="text-red-dark">HiAmps</span>
-      </h1>
+      <div className="flex justify-center align-middle">
+        <Image src="/images/logo/logo.PNG" alt="Logo" width={219} height={36} />
+      </div>
+      <div className="flex items-end justify-center gap-3 mb-6 mt-10">
+        <span className="loader-ball bg-red-dark animate-bounce1"></span>
+        <span className="loader-ball bg-red-dark animate-bounce2"></span>
+        <span className="loader-ball bg-red-dark animate-bounce3"></span>
+      </div>
     </div>
   );
 }

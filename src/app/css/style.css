@@ -202,28 +202,32 @@ input[type='search']::-webkit-search-results-decoration {
 .text-black{
   color: black;
 }
-/* NProgress custom styling */
-#nprogress {
-  pointer-events: none;
+/* Common ball style */
+.loader-ball {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-#nprogress .bar {
-  background: #ef4444; /* red color (Tailwind 'red-500') */
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
+/* Bounce animations */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
 }
 
-#nprogress .peg {
-  display: block;
-  position: absolute;
-  right: 0px;
-  width: 100px;
-  height: 100%;
-  box-shadow: 0 0 10px #ef4444, 0 0 5px #ef4444;
-  opacity: 1;
-  transform: rotate(3deg) translate(0px, -4px);
+.animate-bounce1 {
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.animate-bounce2 {
+  animation: bounce 1.2s infinite ease-in-out 0.2s;
+}
+
+.animate-bounce3 {
+  animation: bounce 1.2s infinite ease-in-out 0.4s;
 }

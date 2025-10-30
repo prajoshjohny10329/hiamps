@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
 
 export default function PageLoader() {
   const [loading, setLoading] = useState(false);
@@ -20,11 +22,15 @@ export default function PageLoader() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm text-white text-lg font-medium">
-      <div className="flex flex-col items-center gap-3">
-        <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
-        <p>Please wait...</p>
-      </div>
-    </div>
+    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white text-red transition-opacity duration-700 animate-fadeOut">
+          <div className="flex justify-center align-middle">
+            <Image src="/images/logo/logo.PNG" alt="Logo" width={219} height={36} />
+          </div>
+          <div className="flex items-end justify-center gap-3 mb-6 mt-10">
+            <span className="loader-ball bg-red-dark animate-bounce1"></span>
+            <span className="loader-ball bg-red-dark animate-bounce2"></span>
+            <span className="loader-ball bg-red-dark animate-bounce3"></span>
+          </div>
+        </div>
   );
 }
