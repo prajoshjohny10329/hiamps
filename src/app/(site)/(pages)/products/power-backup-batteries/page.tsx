@@ -185,6 +185,7 @@ export default function PowerBackupBatteries() {
                 data-wow-delay=".2s"
               >
                 {/* Main Image */}
+                
                 <Image
                   src="/images/pages/products/hiamps-green-series-battery.webp"
                   alt="Hiamps Green Series Battery"

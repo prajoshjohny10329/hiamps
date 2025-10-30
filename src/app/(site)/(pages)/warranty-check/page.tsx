@@ -146,6 +146,8 @@ export default function WarrantyCheck() {
               {/* Logo */}
               <div className="flex justify-center mb-3">
                 <Image
+                  width={24}
+                  height={10}
                   src="/images/logo/logo.PNG"
                   alt="HiAmps Logo"
                   className="w-24 h-auto"
@@ -200,13 +202,15 @@ export default function WarrantyCheck() {
               {/* Footer */}
               <div className="mt-6 text-center text-xs text-gray-500">
                 <p>For service, contact HiAmps Customer Support</p>
-                <p>Kollam, Kerala | +91 98765 43210 | www.hiamps.com</p>
+                <p>karnataka, Kerala, TamilNadu  | +91 994 500 4857 | www.hiamps.co</p>
               </div>
 
               {/* Optional Signature */}
               <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
                 <p>Authorized Signatory</p>
                 <Image
+                  width={24}
+                  height={10}
                   src="/signature.png"
                   alt="Sign"
                   className="w-16 opacity-80"
