@@ -6,7 +6,6 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
 
-
 interface Product {
   _id: string;
   name: string;
@@ -36,43 +35,46 @@ export default function UserProductsPage() {
     fetchProducts();
   }, []);
 
+  // ✅ Loader while fetching data
   if (loading)
-    return <p className="text-center py-10">Loading products...</p>;
+    return (
+      <div className="flex flex-col justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-red-dark border-t-transparent rounded-full animate-spin"></div>
+        <p className="mt-4 text-gray-700 font-medium">Loading products...</p>
+      </div>
+    );
 
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <Breadcrumb title="Products" pages={["products"]} />
 
-      <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {products.map((product) => (
           <div
             key={product._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col"
           >
             <Image
-            width={48}
-            height={48}
+              width={600}
+              height={600}
               src={product.image || "/placeholder.png"}
               alt={product.name}
-              className="w-full h-48 object-cover"
+              className="w-full h-60 object-contain"
             />
             <div className="p-4 flex flex-col gap-2 flex-1">
-              <h2 className="font-semibold text-lg">{product.name}</h2>
-              <p className="text-sm text-gray-500">{product.category}</p>
-              {product.price && (
-                <p className="text-blue font-medium">₹ {product.price}</p>
-              )}
-              <p className="text-sm text-gray-700 line-clamp-3">
-                {product.description}
-              </p>
+              <h2 className="font-semibold text-black text-xl">{product.name}</h2>
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-red-dark">{product.category}</p>
+                {product.price && (
+                  <p className="text-black font-extrabold text-xl">₹ {product.price}</p>
+                )}
+              </div>
 
               {/* Buttons */}
               <div className="mt-2 flex gap-2">
-                <button
-                  className="flex-1 text-center bg-gray text-gray-800 py-1 rounded hover:bg-gray-300"
-                >
-                  View Warranty
+                <button className="flex-1 text-center bg-red-dark text-white py-1 rounded hover:bg-red transition-colors">
+                  View Product
                 </button>
               </div>
             </div>
