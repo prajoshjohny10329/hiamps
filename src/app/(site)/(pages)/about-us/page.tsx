@@ -125,12 +125,13 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="flex-1 mt-20  justify-center">
-            <img
-              src="/images/pages/bg/hi-amps-banner.webp"
-              alt="Sunrise Industries"
-              width="100%"
-              className="rounded-sm"
-            />
+            <Image
+                  src="/images/pages/bg/hi-amps-banner.webp"
+                  alt="Sunrise Industries"
+                  width={1000}
+                  height={1001}
+                  className="mx-auto max-w-full"
+                />
           </div>
         </div>
       </section>
@@ -181,7 +182,7 @@ export default function AboutPage() {
             <div className="w-full px-4 lg:w-1/2">
               <div className="lg:ml-auto lg:max-w-[510px]">
                 <span className="text-red mb-4 block text-lg font-medium md:text-[22px]">
-                  "Quality Beyond Your Need."
+                  Quality Beyond Your Need.
                 </span>
                 <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
                   Power Backup Batteries

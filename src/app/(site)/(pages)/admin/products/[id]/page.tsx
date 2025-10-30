@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
@@ -22,8 +22,8 @@ export default function ProductDetailsPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // 🧭 Fetch single product
-  const fetchProduct = async () => {
+  // 🧭 Fetch single product (memoized)
+  const fetchProduct = useCallback(async () => {
     try {
       const res = await axios.get(`/api/admin/products/${id}`);
       setProduct(res.data);
@@ -33,7 +33,7 @@ export default function ProductDetailsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]); // ✅ depends only on `id`
 
   // 🗑️ Delete product
   const handleDelete = async () => {
@@ -51,7 +51,7 @@ export default function ProductDetailsPage() {
 
   useEffect(() => {
     fetchProduct();
-  }, [id]);
+  }, [fetchProduct]); // ✅ no warning now
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 

@@ -31,7 +31,7 @@ export default function PowerBackupBatteries() {
             <a className="mt-10 inline-flex items-center gap-[6.5px]" href="#">
               <span className="relative z-[1] flex h-[50px] w-[50px] items-center justify-center rounded-full bg-red-dark">
                 <span className="absolute -z-[1] inline-flex h-full w-full animate-ping rounded-full bg-red-dark opacity-75"></span>
-                <img
+                <Image
                   alt="Play"
                   loading="lazy"
                   width={24}
@@ -50,10 +50,10 @@ export default function PowerBackupBatteries() {
           {/* Right Text Section */}
           <div className="animate_left relative flex gap-8 md:flex md:w-1/2">
             <div>
-              <img
+              <Image
+                width={1000}
+                height={1000}
                 alt="About"
-                loading="lazy"
-                decoding="async"
                 className="w-full h-auto rounded-lg object-cover"
                 style={{ color: "transparent" }}
                 src="/images/pages/slider-1.webp"

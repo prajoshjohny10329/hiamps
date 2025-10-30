@@ -1,6 +1,8 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
 import LogoutButton from "../Logout";
+import Image from "next/image";
+
 
 export default function AdminProfile() {
   const { data: session } = useSession();
@@ -11,7 +13,9 @@ export default function AdminProfile() {
         <div className="flex items-center gap-3">
           {/* Profile Image */}
           {session.user.image && (
-            <img
+            <Image
+                width={7}
+                height={7}
                 src={session.user.image}
                 alt={session.user.name || "Admin"}
                 className="w-7 h-7 rounded-full"
