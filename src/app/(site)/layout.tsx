@@ -32,16 +32,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body>
-        {loading ? (
-          <PreLoader />
-        ) : (
           <>
             <ReduxProvider>
               <CartModalProvider>
                 <ModalProvider>
                   <PreviewSliderProvider>
                     <Header />
-                    <SessionProvider>{children}</SessionProvider>
+                    <SessionProvider>
+                      <PreLoader />
+                      {children}
+                      </SessionProvider>
                       <Toaster position="bottom-right" />
                     <QuickViewModal />
                     <CartSidebarModal />
@@ -53,7 +53,6 @@ export default function RootLayout({
             <ScrollToTop />
             <Footer />
           </>
-        )}
       </body>
     </html>
   );
