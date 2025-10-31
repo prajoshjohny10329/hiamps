@@ -12,8 +12,8 @@ export default function LithiumBatteries() {
 
   return (
     <section ref={ref}>
-      <div className="px-4 xl:container">
-        <div className="bg-white lg:m-20 m-0 rounded-lg shadow-2xl relative z-10 overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+      <div className="xl:container">
+        <div className="bg-white lg:m-20 m-0 rounded-lg shadow-xl relative z-10 overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
 
           <div className="w-full">
