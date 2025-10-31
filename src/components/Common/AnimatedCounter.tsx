@@ -44,7 +44,7 @@ export default function AnimatedCounter({
   return (
     <span
       ref={ref}
-      className="tabular-nums text-5xl font-extrabold text-slate-900"
+      className="tabular-nums text-5xl font-extrabold text-red-dark text-slate-900"
     >
       {count}
       {suffix}

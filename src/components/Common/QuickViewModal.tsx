@@ -139,7 +139,7 @@ const QuickViewModal = () => {
 
                     <Image
                       // src={product?.imgs?.previews?.[activePreview]}
-                      src={'/logo.png'}
+                      src={'/hiamps-logo.webp'}
                       alt="products-details"
                       width={400}
                       height={400}

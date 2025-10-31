@@ -136,7 +136,7 @@ export default function WarrantyCheck() {
               id="warranty-card"
               className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans max-w-sm mx-auto mt-4"
               style={{
-                backgroundImage: "url('/images/logo/logo.PNG')",
+                backgroundImage: "url('/images/logo/hiamps-logo.webp')",
                 backgroundSize: "120px",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -147,7 +147,7 @@ export default function WarrantyCheck() {
                 <Image
                   width={1000}
                   height={1000}
-                  src="/images/logo/logo.PNG"
+                  src="/images/logo/hiamps-logo.webp"
                   alt="HiAmps Logo"
                   className="w-24 h-auto"
                 />

@@ -26,7 +26,7 @@ export default function IntroLoader() {
   return (
     <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white text-red transition-opacity duration-700 animate-fadeOut">
       <div className="flex justify-center align-middle">
-        <Image src="/images/logo/logo.PNG" alt="Logo" width={219} height={36} />
+        <Image src="/images/logo/hiamps-logo.webp" alt="Logo" width={219} height={36} />
       </div>
       <div className="flex items-end justify-center gap-3 mb-6 mt-10">
         <span className="loader-ball bg-red-dark animate-bounce1"></span>

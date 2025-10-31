@@ -1,6 +1,7 @@
 import BrandStorySection from "@/components/About/BrandStorySection";
 import SunriseIndustries from "@/components/About/SunriseIndustries";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import CounterSection from "@/components/Common/CounterSection";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -15,6 +16,8 @@ export default function AboutPage() {
     <section id="about-us" className="mx-auto py-6 ">
       <Breadcrumb title={"About Us"} pages={["About-us"]} />
       <BrandStorySection />
+      <CounterSection />
+      
       <SunriseIndustries />
       <section className="relative pt-[80px]">
         <div className="container lg:max-w-[1120px]">
