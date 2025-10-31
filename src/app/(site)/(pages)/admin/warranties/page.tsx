@@ -20,9 +20,9 @@ export default function AdminWarranties() {
       <table className="w-full border border-gray-300 text-sm">
         <thead>
           <tr className="bg-gray-100">
-            <th className="p-2 text-left">Customer</th>
-            <th className="p-2 text-left">Phone</th>
-            <th className="p-2 text-left">Category</th>
+            <th className="p-2 text-left">serialNumber</th>
+            <th className="p-2 text-left">userName</th>
+            <th className="p-2 text-left">phone</th>
             <th className="p-2 text-left">Purchase Date</th>
             <th className="p-2 text-left">Status</th>
           </tr>
@@ -36,7 +36,7 @@ export default function AdminWarranties() {
               <td className="p-2">{item.serialNumber}</td>
               <td className="p-2">{item.userName}</td>
               <td className="p-2">{item.phone}</td>
-              <td className="p-2">{new Date(item.purchaseDate).toLocaleDateString()}</td>
+              <td className="p-2">{new Date(item.createdAt).toLocaleDateString()}</td>
               <td className="p-2">
                 {!item.viewed ? (
                   <span className="text-red-500 font-medium">New Registration</span>

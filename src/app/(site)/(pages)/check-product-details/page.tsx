@@ -60,7 +60,7 @@ export default function CheckProductDetails() {
           <p><strong>Name:</strong> {details.userName}</p>
           <p><strong>Product Type:</strong> {details.productType}</p>
           <p><strong>Purchase Date:</strong> {details.purchaseDate}</p>
-          <p><strong>Warranty:</strong> {details.warrantyYears} Year(s)</p>
+          <p><strong>Warranty:</strong> {details.warrantyMonths} Year(s)</p>
           <p className="text-blue-600 font-medium mt-2">
             {details.warrantyStatus}
           </p>

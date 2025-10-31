@@ -16,11 +16,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Battery not found" }, { status: 404 });
     }
 
+    console.log("date check");
+    
+    
+    
+
     // Calculate warranty validity
     const purchaseDate = new Date(battery.createdAt);
-    const warrantyYears = battery.warrantyYears || 2;
+    const warrantyMonths = battery.warrantyMonths || 2;
     const warrantyEnd = new Date(purchaseDate);
-    warrantyEnd.setFullYear(purchaseDate.getFullYear() + warrantyYears);
+    warrantyEnd.setFullYear(purchaseDate.getFullYear() + warrantyMonths);
 
     const today = new Date();
     const remainingDays = Math.ceil((warrantyEnd.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
@@ -37,7 +42,7 @@ export async function POST(req: Request) {
       userName: battery.userName,
       productType: battery.productType,
       purchaseDate: purchaseDate.toDateString(),
-      warrantyYears,
+      warrantyMonths,
       warrantyStatus,
     });
   } catch (error) {

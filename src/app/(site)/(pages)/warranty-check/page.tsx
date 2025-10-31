@@ -6,7 +6,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Image from "next/image";
 
-
 export default function WarrantyCheck() {
   const [serial, setSerial] = useState("");
   const [warranty, setWarranty] = useState<any>(null);
@@ -26,7 +25,7 @@ export default function WarrantyCheck() {
     } else {
       setWarranty(data);
       console.log(data);
-      
+
       toast.success("Warranty found!");
     }
   };
@@ -110,14 +109,14 @@ export default function WarrantyCheck() {
                 {new Date(warranty.purchaseDate).toLocaleDateString()}
               </p>
               <p>
-                <strong>Warranty Years:</strong> {warranty.warrantyYears} years
+                <strong>Warranty Years:</strong> {warranty.warrantyMonths} years
               </p>
               <p>
                 <strong>Valid Until:</strong>{" "}
                 {new Date(
                   new Date(warranty.purchaseDate).setFullYear(
                     new Date(warranty.purchaseDate).getFullYear() +
-                      warranty.warrantyYears
+                      warranty.warrantyMonths
                   )
                 ).toLocaleDateString()}
               </p>
@@ -146,8 +145,8 @@ export default function WarrantyCheck() {
               {/* Logo */}
               <div className="flex justify-center mb-3">
                 <Image
-                  width={24}
-                  height={10}
+                  width={1000}
+                  height={1000}
                   src="/images/logo/logo.PNG"
                   alt="HiAmps Logo"
                   className="w-24 h-auto"
@@ -165,56 +164,65 @@ export default function WarrantyCheck() {
               {/* Body */}
               <div className="space-y-2 text-sm">
                 <div className="text-sm space-y-1">
-              <p>
-                <strong>Serial Number:</strong> {warranty.serialNumber}
-              </p>
-              <p>
-                <strong>Customer Name:</strong> {warranty.userName}
-              </p>
-              <p>
-                <strong>Phone:</strong> {warranty.phone}
-              </p>
-              <p>
-                <strong>Email:</strong> {warranty.email || "N/A"}
-              </p>
-              <p>
-                <strong>Category:</strong> {warranty.category?.name}
-              </p>
-              <p>
-                <strong>Purchase Date:</strong>{" "}
-                {new Date(warranty.purchaseDate).toLocaleDateString()}
-              </p>
-              <p>
-                <strong>Warranty Years:</strong> {warranty.warrantyYears} years
-              </p>
-              <p>
-                <strong>Valid Until:</strong>{" "}
-                {new Date(
-                  new Date(warranty.purchaseDate).setFullYear(
-                    new Date(warranty.purchaseDate).getFullYear() +
-                      warranty.warrantyYears
-                  )
-                ).toLocaleDateString()}
-              </p>
-            </div>
+                  <p>
+                    <strong>Serial Number:</strong> {warranty.serialNumber}
+                  </p>
+                  <p>
+                    <strong>Customer Name:</strong> {warranty.userName}
+                  </p>
+                  <p>
+                    <strong>Phone:</strong> {warranty.phone}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {warranty.email || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Category:</strong> {warranty.category}
+                  </p>
+                  <p>
+                    <strong>ProductName:</strong> {warranty.productName}
+                  </p>
+                  <p>
+                    <strong>Purchase Date:</strong>{" "}
+                    {new Date(warranty.createdAt).toLocaleString("en-IN", {
+                      timeZone: "Asia/Kolkata",
+                    })}
+                  </p>
+                  <p>
+                    <strong>Warranty Months:</strong> {warranty.warrantyMonths}{" "}
+                    Months
+                  </p>
+                  <p>
+                    <strong>Valid Until:</strong>{" "}
+                    {new Date(
+                      new Date(warranty.createdAt).setMonth(
+                        new Date(warranty.createdAt).getMonth() +
+                          warranty.warrantyMonths
+                      )
+                    ).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" })}
+                  </p>
+                </div>
               </div>
 
               {/* Footer */}
               <div className="mt-6 text-center text-xs text-gray-500">
                 <p>For service, contact HiAmps Customer Support</p>
-                <p>karnataka, Kerala, TamilNadu  | +91 994 500 4857 | www.hiamps.co</p>
+                <p>
+                  karnataka, Kerala, TamilNadu | +91 994 500 4857 |
+                  www.hiamps.co
+                </p>
               </div>
 
               {/* Optional Signature */}
               <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
                 <p>Authorized Signatory</p>
-                <Image
+                {/* <Image
                   width={24}
                   height={10}
                   src="/signature.png"
                   alt="Sign"
                   className="w-16 opacity-80"
-                />
+                /> */}
               </div>
             </div>
 

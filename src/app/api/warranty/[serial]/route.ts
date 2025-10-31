@@ -12,6 +12,8 @@ export async function GET(req: Request, context: { params: Promise<{ serial: str
     if (!warranty) {
       return NextResponse.json({ message: "Warranty not found" }, { status: 404 });
     }
+    console.log(warranty);
+    
 
     return NextResponse.json(warranty);
   } catch (error) {

@@ -10,7 +10,7 @@ interface Battery {
   email?: string;
   productType: string;
   purchaseDate: string;
-  warrantyYears: number;
+  warrantyMonths: number;
   createdAt: string;
 }
 
@@ -68,7 +68,7 @@ export default function AdminPage() {
                   <td className="border p-2">
                     {new Date(b.purchaseDate).toLocaleDateString()}
                   </td>
-                  <td className="border p-2">{b.warrantyYears} yrs</td>
+                  <td className="border p-2">{b.warrantyMonths} yrs</td>
                   <td className="border p-2">
                     {new Date(b.createdAt).toLocaleString()}
                   </td>

@@ -1,36 +1,42 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Warranty from "@/models/Warranty";
+import Product from "@/models/Product";
 
 export async function POST(req: Request) {
   try {
     await connectDB();
     const data = await req.json();
+    const { serialNumber, userName, phone, email, category, productName, purchaseDate } = data;
 
-    const { serialNumber, userName, phone, email, category, purchaseDate } = data;
-
-    console.log(category);
-    
-
-    if (!serialNumber || !userName || !phone || !category || !purchaseDate) {
+    if (!serialNumber || !userName || !phone || !category || !productName || !purchaseDate) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
     }
+
+    const product = await Product.findOne({ name: productName });
+    if (!product) {
+      return NextResponse.json({ message: "Product not found" }, { status: 404 });
+    }
+
+    const warrantyMonths = product.warranty;
 
     const existing = await Warranty.findOne({ serialNumber });
     if (existing) {
       return NextResponse.json({ message: "Product already registered" }, { status: 409 });
     }
 
-    const warranty = new Warranty({
+    const warrantyInput = new Warranty({
       serialNumber,
       userName,
       phone,
       email,
       category,
+      productName,
       purchaseDate,
+      warrantyMonths,
     });
 
-    await warranty.save();
+    await warrantyInput.save();
 
     return NextResponse.json({ message: "Product registered successfully!" }, { status: 201 });
   } catch (error) {
@@ -39,10 +45,11 @@ export async function POST(req: Request) {
   }
 }
 
+
 export async function GET() {
   try {
     await connectDB();
-    const warranties = await Warranty.find().populate("category", "name").sort({ createdAt: -1 });
+    const warranties = await Warranty.find().sort({ createdAt: -1 });
     console.log('warranties Get');
     console.log(warranties);
     

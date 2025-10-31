@@ -786,7 +786,7 @@ export default function WarrantyRegister() {
     phone: "",
     email: "",
     category: "",
-    ProductName: "",
+    productName: "",
     purchaseDate: "",
     state: "",
     district: "",
@@ -850,7 +850,7 @@ export default function WarrantyRegister() {
         phone: "",
         email: "",
         category: "",
-        ProductName: "",
+        productName: "",
         purchaseDate: "",
         state: "",
         district: "",
@@ -968,7 +968,7 @@ export default function WarrantyRegister() {
 
                     <select
                       name="productName"
-                      value={form.ProductName}
+                      value={form.productName}
                       onChange={handleChange}
                       required
                       className="rounded-md border border-gray-3 text-dark bg-white placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"

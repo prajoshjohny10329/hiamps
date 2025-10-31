@@ -6,8 +6,9 @@ export interface IWarranty extends Document {
   phone: string;
   email?: string;
   category: string;
+  productName: string;
   purchaseDate: Date;
-  warrantyYears: number;
+  warrantyMonths: number;
   viewed: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -20,8 +21,9 @@ const warrantySchema = new Schema<IWarranty>(
     phone: { type: String, required: true },
     email: { type: String },
     category: { type: String, required: true },
+    productName: { type: String, required: true },
     purchaseDate: { type: Date, required: true },
-    warrantyYears: { type: Number, default: 2 },
+    warrantyMonths: { type: Number },
     viewed: { type: Boolean, default: false },
   },
   { timestamps: true }

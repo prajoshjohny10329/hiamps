@@ -112,7 +112,7 @@ export default function AddProductPage() {
           {/* Product Name & Price */}
           <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
             <div className="w-full">
-              <label htmlFor="name" className="block mb-2.5">
+              <label htmlFor="name" className="block mb-2.5 text-black">
                 Product Name <span className="text-red">*</span>
               </label>
               <input
@@ -126,7 +126,7 @@ export default function AddProductPage() {
             </div>
 
             <div className="w-full">
-              <label htmlFor="price" className="block mb-2.5">
+              <label htmlFor="price" className="block mb-2.5 text-black">
                 Price <span className="text-red">*</span>
               </label>
               <input
@@ -143,7 +143,7 @@ export default function AddProductPage() {
 
           {/* Description */}
           <div className="w-full mb-5">
-            <label htmlFor="description" className="block mb-2.5">
+            <label htmlFor="description" className="block mb-2.5 text-black">
               Description <span className="text-red">*</span>
             </label>
             <input
@@ -159,7 +159,7 @@ export default function AddProductPage() {
           {/* Category & Warranty */}
           <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
             <div className="w-full">
-              <label htmlFor="category" className="block mb-2.5">
+              <label htmlFor="category" className="block mb-2.5 text-black">
                 Category <span className="text-red">*</span>
               </label>
               <select
@@ -179,7 +179,7 @@ export default function AddProductPage() {
             </div>
 
             <div className="w-full">
-              <label htmlFor="warranty" className="block mb-2.5">
+              <label htmlFor="warranty" className="block mb-2.5 text-black">
                 Warranty <span className="text-red">*</span>
               </label>
               <input
