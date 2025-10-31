@@ -8,13 +8,23 @@ import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
 import CounterSection from "../Common/CounterSection";
 import BrandStorySection from "../About/BrandStorySection";
+import AllProducts from "./AllProducts";
+import PowerBackupBattery from "./Products/PowerBackupBattery";
+import LithiumBatteries from "./Products/LithiumBatteries";
+import InvertersUPS from "./Products/InvertersUPS";
+import BatteryTrolleyCabinets from "./Products/BatteryTrolleyCabinets";
 
 const Home = () => {
   return (
     <main>
       <Hero />
+      <PowerBackupBattery />
+      <LithiumBatteries />
+      <InvertersUPS />
+      <BatteryTrolleyCabinets />
       <BrandStorySection />
       <CounterSection />
+      <AllProducts />
       <Categories />
       <NewArrival />
       <PromoBanner />

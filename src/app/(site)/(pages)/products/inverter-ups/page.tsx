@@ -17,7 +17,7 @@ const page = () => {
       <div className="px-0  flex items-center pt-6 sm:pt-0 flex-col md:flex-row">
         <div className="flex-1  py-10 sm:py-15 lg:py-24.5 pl-4 sm:pl-7.5 lg:pl-12.5">
           <h2 className="mb-2 text-3xl font-bold text-black text-black">Complete <strong className="text-red">Power Solutions</strong> <br /> from a  Trusted Name</h2>
-          <p className="text-black mt-7">
+          <p className="text-lg  leading-relaxed text-black mt-2">
             With decades of expertise in long-lasting{" "}
             <strong>tubular battery manufacturing, Hi-Amps</strong> proudly
             expands into <strong>power inverters and UPS systems</strong>,

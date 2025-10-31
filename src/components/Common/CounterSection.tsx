@@ -5,7 +5,7 @@ export default function CounterSection() {
     <section className="max-w-[1170px] w-full mx-auto my-10 bg-slate-50 flex items-center justify-center">
       <div className="grid md:grid-cols-3 gap-10 text-center">
         {/* Counter 1 */}
-        <div>
+        <div className="px-10">
           <AnimatedCounter target={40} suffix="K+" />
           <p className="font-semibold text-black text-2xl">Variations</p>
           <p className="text-black text-sm">
@@ -15,7 +15,7 @@ export default function CounterSection() {
         </div>
 
         {/* Counter 2 */}
-        <div>
+        <div className="px-10">
           <AnimatedCounter target={70} suffix="K+" />
           <p className="font-semibold text-black text-2xl">Lessons</p>
           <p className="text-black text-sm">
@@ -25,7 +25,7 @@ export default function CounterSection() {
         </div>
 
         {/* Counter 3 */}
-        <div>
+        <div className="px-10">
           <AnimatedCounter target={149} suffix="+" />
           <p className="font-semibold text-black text-2xl">Workshops</p>
           <p className="text-black text-sm">

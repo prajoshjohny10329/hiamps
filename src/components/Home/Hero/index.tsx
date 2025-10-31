@@ -18,7 +18,6 @@ const Hero = () => {
                 width={534}
                 height={520}
               />
-
               <HeroCarousel />
             </div>
           </div>
