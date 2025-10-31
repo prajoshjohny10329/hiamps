@@ -26,6 +26,12 @@ export const menuData: Menu[] = [
     path: "/products",
     submenu: [
       {
+        id: 20,
+        title: "View All Products",
+        newTab: false,
+        path: "/products/",
+      },
+      {
         id: 21,
         title: "Power Backup Batteries",
         newTab: false,

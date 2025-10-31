@@ -1,4 +1,5 @@
 import BrandStorySection from "@/components/About/BrandStorySection";
+import SunriseIndustries from "@/components/About/SunriseIndustries";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -14,47 +15,7 @@ export default function AboutPage() {
     <section id="about-us" className="mx-auto py-6 ">
       <Breadcrumb title={"About Us"} pages={["About-us"]} />
       <BrandStorySection />
-
-      {/* <!-- Main Heading --> */}
-      <section className="max-w-[1170px] w-full mx-auto px-4 py-20 sm:px-8 xl:px-0">
-        <div className="flex  flex-col md:flex-row">
-          <div className="flex-1 ">
-            <h4 className="mb-3 text-xl font-medium text-red-dark">
-              Quality Beyond Your Need
-            </h4>
-            <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
-              Sunrise Industries
-            </h2>
-            <p className="text-black text-xl md:text-3xl font-bold underline mb-6 uppercase"></p>
-
-            <p className="text-base text-black leading-relaxed mb-4">
-              For years, <strong>Sunrise Industries</strong> has been at the
-              forefront of reliable energy solutions, delivering trusted power
-              across South India. With decades of expertise in lead-acid battery
-              manufacturing, we have built a reputation for unmatched quality,
-              durability, and service.
-            </p>
-
-            <p className="text-base text-black leading-relaxed">
-              Our flagship brand, <strong>Hi-Amps Tubular Battery</strong>, is
-              engineered for performance and longevity, with a proven lifespan
-              of over 10 years under proper usage. Designed for households,
-              businesses, and industrial applications, Hi-Amps has become a
-              trusted name in dependable backup power.
-            </p>
-          </div>
-          <div className="flex-1 mt-20  justify-center">
-            <Image
-                  src="/images/pages/bg/hi-amps-banner.webp"
-                  alt="Sunrise Industries"
-                  width={1000}
-                  height={1001}
-                  className="mx-auto max-w-full"
-                />
-          </div>
-        </div>
-      </section>
-
+      <SunriseIndustries />
       <section className="relative pt-[80px]">
         <div className="container lg:max-w-[1120px]">
           {/* First Row */}
@@ -147,7 +108,7 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center my-5">
+              <div className="flex ml-10 my-5">
                 <a
                   href="/products/power-backup-batteries"
                   className="hidden md:inline-flex justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-red"
