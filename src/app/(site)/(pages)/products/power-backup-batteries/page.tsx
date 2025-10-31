@@ -10,7 +10,7 @@ export default function PowerBackupBatteries() {
         pages={["Power Backup Batteries"]}
       />
 
-      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9">
+      <section className="mx-auto mt-10 max-w-[1390px] px-4 md:px-8 xl:px-9">
         <div className="row-auto md:flex items-center gap-8 xl:gap-[30px]">
           {/* Left Images Section */}
           <div className="animate_right md:w-1/2">
@@ -48,25 +48,75 @@ export default function PowerBackupBatteries() {
           </div>
 
           {/* Right Text Section */}
-          <div className="animate_left relative flex gap-8 md:flex md:w-1/2">
-            <div>
-              <Image
-                width={1000}
-                height={1000}
-                alt="About"
-                className="w-full h-auto rounded-lg object-cover"
-                style={{ color: "transparent" }}
-                src="/images/pages/slider-1.webp"
-              />
-            </div>
+          <div className="animate_left relative flex gap-8 md:flex md:w-1/2 px-15 md:px-0 ">
+            <div className="relative flex-1 w-full">
+                        <Image
+                          src="/images/pages/products/hiamps-blue-series-battery.webp"
+                          alt="Hiamps Blue Series Battery"
+                          width={450}
+                          height={550}
+                          className="mx-auto max-w-full transition delay-150 duration-300 -z-10 contrast-125"
+                        />
+                        <Image
+                          src="/images/pages/products/hiamps-green-series-battery.webp"
+                          alt="Hiamps Blue Series Battery"
+                          width={420}
+                          height={550}
+                          className="mx-auto max-w-full absolute top-9 left-10 brightness-105 contrast-125"
+                        />
+            
+                        <Image
+                          src="/images/pages/products/hiamps-red-series-battery.webp"
+                          alt="Hiamps Blue Series Battery"
+                          width={420}
+                          height={550}
+                          className="mx-auto max-w-full absolute top-9 right-10 brightness-105 contrast-125"
+                        />
+                      </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 py-20">
+      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 mt-10 ">
         <div className="row-auto md:flex items-center gap-8 xl:gap-[30px]">
           {/* First Row */}
-          <div className="-mx-4 flex flex-wrap items-center justify-between">
+          <div className="-mx-4 flex  flex-wrap items-center justify-between flex-col-reverse lg:flex-row">
+            {/* Left Image */}
+            <div className="w-full lg:w-1/2 flex justify-center mt-5 px-15 md:pt-25">
+              <div
+                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
+                data-wow-delay=".2s"
+              >
+                {/* Main Image */}
+                <Image
+                  src="/images/pages/products/hiamps-red-series-battery.webp"
+                  alt="hiamps-red-series-battery"
+                  width={450}
+                  height={550}
+                  className="mx-auto max-w-full brightness-105 contrast-125"
+                />
+
+                {/* Right Image */}
+                <Image
+                  src="/images/pages/products/hiamps-red-series-battery.webp"
+                  alt="hiamps-red-series-battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-5 right-10 sm:right-16 md:right-20 lg:right-30 -z-10 brightness-105 contrast-125"
+                />
+
+                {/* Left Image */}
+                <Image
+                  src="/images/pages/products/hiamps-red-series-battery.webp"
+                  alt="hiamps-red-series-battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-5 left-10 sm:left-16 md:left-20 lg:left-30 -z-10 brightness-105 contrast-125"
+                />
+
+                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
+              </div>
+            </div>
             {/* Right Content */}
             <div className="w-full px-4 lg:w-1/2 py-5">
               <div className="lg:ml-auto ">
@@ -97,53 +147,55 @@ export default function PowerBackupBatteries() {
                 </p>
               </div>
             </div>
-
-            {/* Left Image */}
-            <div className="w-full px-4 lg:w-1/2 flex justify-center py-5 pt-15 md:pt-25">
-              <div
-                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
-                data-wow-delay=".2s"
-              >
-                {/* Main Image */}
-                <Image
-                  src="/images/pages/products/hiamps-red-series-battery.webp"
-                  alt="hiamps-red-series-battery"
-                  width={450}
-                  height={550}
-                  className="mx-auto max-w-full"
-                />
-
-                {/* Right Image */}
-                <Image
-                  src="/images/pages/products/hiamps-red-series-battery.webp"
-                  alt="hiamps-red-series-battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-5 right-10 sm:right-16 md:right-20 lg:right-30 -z-10"
-                />
-
-                {/* Left Image */}
-                <Image
-                  src="/images/pages/products/hiamps-red-series-battery.webp"
-                  alt="hiamps-red-series-battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-5 left-10 sm:left-16 md:left-20 lg:left-30 -z-10"
-                />
-
-                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* green series Battery */}
-      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 py-20">
+      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 ">
         <div className="row-auto md:flex items-center gap-8 xl:gap-[30px]">
           {/* First Row */}
-          <div className="-mx-4 flex flex-wrap items-center justify-between">
+          <div className="-mx-4 flex  flex-wrap items-center justify-between flex-col-reverse lg:flex-row">
             {/* Right Content */}
+            <div className="w-full lg:w-1/2 flex justify-center pb-5 mt-5 px-15 md:pt-25 ">
+              <div
+                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
+                data-wow-delay=".2s"
+              >
+                {/* Main Image */}
+                
+                <Image
+                  src="/images/pages/products/hiamps-green-series-battery.webp"
+                  alt="Hiamps Green Series Battery"
+                  width={450}
+                  height={550}
+                  className="mx-auto max-w-full brightness-105 contrast-125"
+                />
+
+                {/* Right Image */}
+                <Image
+                  src="/images/pages/products/hiamps-green-series-battery.webp"
+                  alt="Hiamps Green Series Battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-6 right-10 sm:right-16 md:right-20 lg:right-30 -z-10 brightness-105 contrast-125"
+                />
+
+                {/* Left Image */}
+                <Image
+                  src="/images/pages/products/hiamps-green-series-battery.webp"
+                  alt="Hiamps Green Series Battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-6 left-10 sm:left-16 md:left-20 lg:left-30 -z-10 brightness-105 contrast-125"
+                />
+
+                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
+              </div>
+            </div>
+            
+
+            {/* Left Image */}
             <div className="w-full px-4 lg:w-1/2 py-5">
               <div className="lg:ml-auto ">
                 <span className="text-red mb-4 block text-lg font-medium md:text-[22px]">
@@ -177,53 +229,51 @@ export default function PowerBackupBatteries() {
                 </p>
               </div>
             </div>
-
-            {/* Left Image */}
-            <div className="w-full px-4 lg:w-1/2 flex justify-center pb-5 pt-15 md:pt-25 ">
-              <div
-                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
-                data-wow-delay=".2s"
-              >
-                {/* Main Image */}
-                
-                <Image
-                  src="/images/pages/products/hiamps-green-series-battery.webp"
-                  alt="Hiamps Green Series Battery"
-                  width={450}
-                  height={550}
-                  className="mx-auto max-w-full"
-                />
-
-                {/* Right Image */}
-                <Image
-                  src="/images/pages/products/hiamps-green-series-battery.webp"
-                  alt="Hiamps Green Series Battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-6 right-10 sm:right-16 md:right-20 lg:right-30 -z-10"
-                />
-
-                {/* Left Image */}
-                <Image
-                  src="/images/pages/products/hiamps-green-series-battery.webp"
-                  alt="Hiamps Green Series Battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-6 left-10 sm:left-16 md:left-20 lg:left-30 -z-10 "
-                />
-
-                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Blue series Battery */}
-      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 py-20">
+      <section className="mx-auto max-w-[1390px] px-4 md:px-8 xl:px-9 ">
         <div className="row-auto md:flex items-center gap-8 xl:gap-[30px]">
           {/* First Row */}
-          <div className="-mx-4 flex flex-wrap items-center justify-between">
+          <div className="-mx-4 flex  flex-wrap items-center justify-between flex-col-reverse lg:flex-row">
+            {/* Left Image */}
+            <div className="w-full lg:w-1/2 flex justify-center pb-5 mt-5 px-15 md:pt-25 ">
+              <div
+                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
+                data-wow-delay=".2s"
+              >
+                {/* Main Image */}
+                <Image
+                  src="/images/pages/products/hiamps-blue-series-battery.webp"
+                  alt="Hiamps Blue Series Battery"
+                  width={450}
+                  height={550}
+                  className="mx-auto max-w-full transition delay-150 duration-300 brightness-105 contrast-125"
+                />
+
+                {/* Right Image */}
+                <Image
+                  src="/images/pages/products/hiamps-blue-series-battery.webp"
+                  alt="Hiamps Blue Series Battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-6 right-10 sm:right-16 md:right-20 lg:right-30 -z-10 brightness-105 contrast-125"
+                />
+
+                {/* Left Image */}
+                <Image
+                  src="/images/pages/products/hiamps-blue-series-battery.webp"
+                  alt="Hiamps Blue Series Battery"
+                  width={420}
+                  height={550}
+                  className="mx-auto max-w-full absolute top-6 left-10 sm:left-16 md:left-20 lg:left-30 -z-10 brightness-105 contrast-125"
+                />
+
+                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
+              </div>
+            </div>
             {/* Right Content */}
             <div className="w-full px-4 lg:w-1/2 py-5">
               <div className="lg:ml-auto ">
@@ -251,42 +301,7 @@ export default function PowerBackupBatteries() {
               </div>
             </div>
 
-            {/* Left Image */}
-            <div className="w-full px-4 lg:w-1/2 flex justify-center pb-5 pt-15 md:pt-25 ">
-              <div
-                className="relative z-10 mx-auto mb-14 w-full max-w-[470px] pb-6 lg:mx-0 lg:mb-0"
-                data-wow-delay=".2s"
-              >
-                {/* Main Image */}
-                <Image
-                  src="/images/pages/products/hiamps-blue-series-battery.webp"
-                  alt="Hiamps Blue Series Battery"
-                  width={450}
-                  height={550}
-                  className="mx-auto max-w-full transition delay-150 duration-300"
-                />
-
-                {/* Right Image */}
-                <Image
-                  src="/images/pages/products/hiamps-blue-series-battery.webp"
-                  alt="Hiamps Blue Series Battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-6 right-10 sm:right-16 md:right-20 lg:right-30 -z-10"
-                />
-
-                {/* Left Image */}
-                <Image
-                  src="/images/pages/products/hiamps-blue-series-battery.webp"
-                  alt="Hiamps Blue Series Battery"
-                  width={420}
-                  height={550}
-                  className="mx-auto max-w-full absolute top-6 left-10 sm:left-16 md:left-20 lg:left-30 -z-10 "
-                />
-
-                <div className="absolute bottom-0 left-0 -z-10 h-1/2 w-full rounded-[20px] bg-gradient-to-tr from-blue-200 to-purple-200"></div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
