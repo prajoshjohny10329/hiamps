@@ -16,7 +16,7 @@ import BatteryTrolleyCabinets from "./Products/BatteryTrolleyCabinets";
 
 const Home = () => {
   return (
-    <main>
+    <main style={{ background: 'red' }}>
       <Hero />
       <PowerBackupBattery />
       <LithiumBatteries />
