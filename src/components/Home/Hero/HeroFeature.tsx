@@ -3,19 +3,19 @@ import Image from "next/image";
 
 const featureData = [
   {
-    img: "/images/icons/icon-01.svg",
-    title: "Free Shipping",
-    description: "For all orders $200",
+    img: "🧪",
+    title: "Quality",
+    description: "100% Tested & Certified",
   },
   {
-    img: "/images/icons/icon-02.svg",
-    title: "1 & 1 Returns",
-    description: "Cancellation after 1 day",
+    img: "🔋",
+    title: "Battery Life Guarantee",
+    description: "10+ Years Lifespan",
   },
   {
-    img: "/images/icons/icon-03.svg",
-    title: "100% Secure Payments",
-    description: "Gurantee secure payments",
+    img: "☀️",
+    title: "Solar-Ready Solutions",
+    description: "Future-Ready Power",
   },
 ];
 
@@ -25,10 +25,11 @@ const HeroFeature = () => {
       <div className="flex flex-wrap items-center gap-7.5 xl:gap-12.5 mt-10">
         {featureData.map((item, key) => (
           <div className="flex flex-1 items-center gap-4" key={key}>
-            <Image src={item.img} alt="icons" width={60} height={60} />
+            {/* <Image src={item.img} alt="icons" width={60} height={60} /> */}
+            <p className="text-4xl">{item.img}</p>
 
             <div>
-              <h3 className="font-medium text-xl font-semibold text-red-dark">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-red-dark">{item.title}</h3>
               <p className="text-sm text-black">{item.description}</p>
             </div>
           </div>

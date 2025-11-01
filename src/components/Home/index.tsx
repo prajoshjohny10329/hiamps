@@ -13,24 +13,21 @@ import PowerBackupBattery from "./Products/PowerBackupBattery";
 import LithiumBatteries from "./Products/LithiumBatteries";
 import InvertersUPS from "./Products/InvertersUPS";
 import BatteryTrolleyCabinets from "./Products/BatteryTrolleyCabinets";
+import HomePageProducts from "./Products/HomeProducts";
+import ContactSection from "./Contact/ContactSection";
 
 const Home = () => {
   return (
     <main style={{ background: 'red' }}>
       <Hero />
+      <BrandStorySection />
+      <HomePageProducts />
+      <CounterSection />
       <PowerBackupBattery />
       <LithiumBatteries />
       <InvertersUPS />
       <BatteryTrolleyCabinets />
-      <BrandStorySection />
-      <CounterSection />
-      <AllProducts />
-      <Categories />
-      <NewArrival />
-      <PromoBanner />
-      <BestSeller />
-      <Testimonials />
-      <Newsletter />
+      <ContactSection />
     </main>
   );
 };

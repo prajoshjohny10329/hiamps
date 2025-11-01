@@ -14,33 +14,31 @@ export default function PowerBackupBatteries() {
   return (
     <section>
       <Breadcrumb
-        title={"Lithium Batteries"}
-        pages={["Lithium Batteries"]}
+        title={"UPS Battery Cabinet"}
+        pages={["UPS Battery Cabinet"]}
       />
 
       <section ref={ref}>
-            <div className="xl:container">
+            <div className=" xl:container">
               <div className="bg-white lg:m-20 m-0 rounded-lg shadow-xl relative z-10 overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
                 <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
       
                 <div className="w-full">
                   <div className="-mx-4 flex w-full flex-wrap items-center flex-col-reverse md:flex-row-reverse">
-                    {/* Left Image Section */}
                     <motion.div
-                      className="flex-1 mt-20  justify-center relative  w-full"
+                      className="flex-1 mt-20 justify-center w-full"
                       initial={{ opacity: 0, x: 100 }}
                       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                       <Image
-                        src="/images/pages/products/hiamps-red-series-battery-2.webp"
+                        src="/images/pages/products/hiamps-trolly.webp"
                         alt="Hiamps Blue Series Battery"
-                        width={450}
-                        height={550}
-                        className="mx-auto max-w-full transition delay-150 duration-300 -z-10 contrast-125"
+                        width={700}
+                        height={700}
+                        className="mx-auto transition delay-150 duration-300 contrast-125"
                       />
                     </motion.div>
-      
                     {/* Right Text Section */}
                     <motion.div
                       className="w-full flex-1 px-4 lg:w-1/2"
@@ -50,21 +48,25 @@ export default function PowerBackupBatteries() {
                       }
                       transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                      <div className="max-w-[565px] lg:ml-auto">
+                      <div className="max-w-[565px] lg:ml-auto ">
                         <h4 className="mb-3 text-xl font-medium text-red-dark">
-                          Smart Energy for the Future
+                          Safe, Stylish & Practical
                         </h4>
                         <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
-                          Lithium Batteries
+                          Battery Trolley Cabinets
                         </h2>
                         <p className="text-black text-xl md:text-3xl font-bold underline mb-6 uppercase"></p>
       
                         <p className="text-base text-black leading-relaxed mb-4">
-                          Experience next-generation power with Hi-Amps Lithium Batteries, built for faster charging, longer life, and superior efficiency. Lightweight and eco-friendly, they deliver reliable energy for modern homes, offices, and solar applications — making every watt count.
+                          Protect and organize your inverter setup with Hi-Amps Battery Trolley Cabinets, built for durability, ventilation, and mobility. Designed with a sleek finish and smooth wheels, they keep your batteries safe, cool, and easy to move—combining functionality with modern design.
                         </p>
+                        <div className="mt-9">
+                        </div>
                         
                       </div>
                     </motion.div>
+                    {/* Left Image Section */}
+                    
                   </div>
                 </div>
               </div>

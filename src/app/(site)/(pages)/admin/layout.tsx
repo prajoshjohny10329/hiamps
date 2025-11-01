@@ -4,7 +4,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
         <>
         <AdminHeader />
-        <main className="p-6 min-h-screen">{children}</main>
+        <main className="p-6 min-h-screen" style={{ background: 'red' }}>{children}</main>
         </>
   );
 }

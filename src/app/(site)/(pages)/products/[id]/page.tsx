@@ -35,7 +35,7 @@ export default function ProductDetailsPage() {
   // 🧭 Fetch single product (memoized)
   const fetchProduct = useCallback(async () => {
     try {
-      const res = await axios.get(`/api/admin/products/${id}`);
+      const res = await axios.get(`/api/products/${id}`);
       setProduct(res.data);
     } catch (err) {
       toast.error("Failed to load product details");
@@ -44,20 +44,6 @@ export default function ProductDetailsPage() {
       setLoading(false);
     }
   }, [id]); // ✅ depends only on `id`
-
-  // 🗑️ Delete product
-  const handleDelete = async () => {
-    if (!confirm("Are you sure you want to delete this product?")) return;
-
-    try {
-      await axios.delete(`/api/admin/products/${id}`);
-      toast.success("Product deleted successfully");
-      router.push("/admin/products");
-    } catch (err) {
-      toast.error("Failed to delete product");
-      console.error(err);
-    }
-  };
 
   useEffect(() => {
     fetchProduct();
@@ -68,9 +54,9 @@ export default function ProductDetailsPage() {
   if (!product) return <p className="text-center text-black mt-10">Product not found.</p>;
 
   return (
-    <>
-    <Breadcrumb title={"Admin Single Product"} pages={["Admin Single Product"]} />
-    <section ref={ref} >
+    <main className="p-6 min-h-screen" style={{ background: 'red' }}>
+    <Breadcrumb title={"View Single Product"} pages={["View Single Product"]} />
+    <section ref={ref} className="mb-5" >
           <div className="xl:container ">
             <div className=" bg-white lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
     
@@ -123,20 +109,11 @@ export default function ProductDetailsPage() {
     
                       <div className="flex gap-3 mt-9">
                       <button
-                        onClick={() => router.push(`/admin/products/edit/${product._id}`)}
-                        className="justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-red"
+                        className="justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-green"
                       >
-                        Edit Product
-                      </button>
-                      <button
-                        onClick={handleDelete}
-                        className="justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-red"
-                      >
-                        Delete Product
+                        Enquiry Now
                       </button>
                     </div>
-                      
-                      
                     </div>
                   </motion.div>
                 </div>
@@ -144,6 +121,6 @@ export default function ProductDetailsPage() {
             </div>
           </div>
         </section>
-    </>
+    </main>
   );
 }

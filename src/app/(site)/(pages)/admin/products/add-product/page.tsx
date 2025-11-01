@@ -107,7 +107,8 @@ export default function AddProductPage() {
   return (
     <>
       <Breadcrumb title={"Add New Product"} pages={["Add New Product"]} />
-      <div className="max-w-[1170px] mx-auto p-6 bg-white shadow-md rounded-lg mt-[30px]">
+      <section className=" bg-white lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+        <div className="max-w-[1170px] mx-auto p-6 bg-white rounded-lg mt-[30px]">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           {/* Product Name & Price */}
           <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
@@ -249,6 +250,8 @@ export default function AddProductPage() {
           )}
         </form>
       </div>
+      </section>
+      
     </>
   );
 }

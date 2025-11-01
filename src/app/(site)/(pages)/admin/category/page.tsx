@@ -53,7 +53,8 @@ export default function CategoriesPage() {
     toast((t1) => (
       <div className="text-sm">
         <p className="font-medium mb-2">
-          Are you sure you want to delete <span className="text-red font-semibold">“{catName}”</span>?
+          Are you sure you want to delete{" "}
+          <span className="text-red font-semibold">“{catName}”</span>?
         </p>
         <div className="flex justify-end gap-3 mt-3">
           <button
@@ -69,7 +70,8 @@ export default function CategoriesPage() {
               toast((t2) => (
                 <div className="text-sm">
                   <p className="font-medium mb-2 text-red-700">
-                    ⚠️ This action cannot be undone.<br />
+                    ⚠️ This action cannot be undone.
+                    <br />
                     Delete permanently?
                   </p>
                   <div className="flex justify-end gap-3 mt-3">
@@ -88,7 +90,10 @@ export default function CategoriesPage() {
                           toast.success(`"${catName}" deleted successfully`);
                           fetchCategories();
                         } catch (error: any) {
-                          toast.error(error.response?.data?.error || "Error deleting category");
+                          toast.error(
+                            error.response?.data?.error ||
+                              "Error deleting category"
+                          );
                         } finally {
                           setDeleting(null);
                         }
@@ -119,55 +124,66 @@ export default function CategoriesPage() {
       <Toaster position="bottom-center" reverseOrder={false} />
 
       <Breadcrumb title={"Categories"} pages={["categories"]} />
+      <section className=" bg-white md:pt-10 lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-0 pb-8 pt-3 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+        <div className=" mx-auto bg-white p-6 mt-10 rounded-lg">
+          
 
-      <div className="max-w-2xl mx-auto bg-white p-6 mt-10 rounded-lg shadow-md">
-        <h1 className="text-2xl font-semibold mb-6 text-center">
-          Manage Categories
-        </h1>
+          <div className="flex flex-col lg:flex-row">
+            {/* ✅ Add category form */}
+          <div className="flex-1">
+            <h2 className="text-2xl text-black font-semibold mb-6 text-center">
+            Add New Categories
+          </h2>
+            <form onSubmit={handleSubmit} className=" mb-6">
+            <input
+              type="text"
+              placeholder="New Category Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+            />
+            <button
+              type="submit"
+              disabled={adding}
+              className="inline-flex font-medium text-white bg-red-dark mt-3 py-2 px-7 rounded-md ease-out duration-200 hover:bg-red-dark-dark"
+            >
+              {adding ? "Adding..." : "Add New Categories"}
+            </button>
+          </form>
+          </div>
 
-        {/* ✅ Add category form */}
-        <form onSubmit={handleSubmit} className="flex gap-3 mb-6">
-          <input
-            type="text"
-            placeholder="New Category Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-400"
-          />
-          <button
-            type="submit"
-            disabled={adding}
-            className="bg-red text-white px-9 py-2 rounded hover:bg-green duration-200 disabled:opacity-70"
-          >
-            {adding ? "Adding..." : "Add"}
-          </button>
-        </form>
-
-        {/* ✅ Category list */}
-        {categories.length === 0 ? (
-          <p className="text-center text-gray-500">No categories yet.</p>
-        ) : (
-          <ul className="divide-y">
-            {categories.map((cat) => (
-              <li
-                key={cat._id}
-                className="py-3 flex justify-between items-center"
-              >
-                <div>
-                  <span className="font-medium">{cat.name}</span>
-                </div>
-                <button
-                  onClick={() => handleDelete(cat._id, cat.name)}
-                  disabled={deleting === cat._id}
-                  className="bg-red text-white text-sm px-4 py-1 rounded hover:bg-red disabled:opacity-70"
+          <div className="flex-1 mt-8 lg:mt-0 pl-0 lg:pl-14">
+            <h2 className="text-2xl text-black font-semibold mb-6 text-center">
+            View Current Categories
+          </h2>
+            {/* ✅ Category list */}
+          {categories.length === 0 ? (
+            <p className="text-center text-gray-500">No categories yet.</p>
+          ) : (
+            <ul className="divide-y">
+              {categories.map((cat) => (
+                <li
+                  key={cat._id}
+                  className="py-3 flex justify-between items-center"
                 >
-                  {deleting === cat._id ? "Deleting..." : "Delete"}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+                  <div>
+                    <span className="font-medium text-black">{cat.name}</span>
+                  </div>
+                  <button
+                    onClick={() => handleDelete(cat._id, cat.name)}
+                    disabled={deleting === cat._id}
+                    className="bg-red-dark  text-white text-sm px-6 py-1.5 rounded hover:bg-green disabled:opacity-70"
+                  >
+                    {deleting === cat._id ? "Deleting..." : "Delete"}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

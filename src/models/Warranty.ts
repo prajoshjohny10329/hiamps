@@ -12,6 +12,10 @@ export interface IWarranty extends Document {
   viewed: boolean;
   createdAt: Date;
   updatedAt: Date;
+  state: string;
+  district: string;
+  address: string;
+
 }
 
 const warrantySchema = new Schema<IWarranty>(
@@ -25,6 +29,10 @@ const warrantySchema = new Schema<IWarranty>(
     purchaseDate: { type: Date, required: true },
     warrantyMonths: { type: Number },
     viewed: { type: Boolean, default: false },
+    state: { type: String, required: true },
+    district: { type: String, required: true },
+    address: { type: String, required: true },
+      
   },
   { timestamps: true }
 );

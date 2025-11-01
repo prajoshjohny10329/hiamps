@@ -13,7 +13,7 @@ export default function AllProducts() {
   return (
     <section ref={ref}>
       <div className="px-4 xl:container">
-        <div className="relative z-10 overflow-hidden rounded-sm px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+        <div className=" bg-white md:pt-10 lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-0 pb-8 pt-3 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
 
           <div className="w-full">
@@ -48,16 +48,12 @@ export default function AllProducts() {
                     Quality Beyond Your Need
                   </h4>
                   <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
-                    Sunrise Industries
+                    📞 Get in Touch with Us
                   </h2>
                   <p className="text-black text-xl md:text-3xl font-bold underline mb-6 uppercase"></p>
 
                   <p className="text-base text-black leading-relaxed mb-4">
-                    For years, <strong>Sunrise Industries</strong> has been at
-                    the forefront of reliable energy solutions, delivering
-                    trusted power across South India. With decades of expertise
-                    in lead-acid battery manufacturing, we have built a
-                    reputation for unmatched quality, durability, and service.
+                    Have questions or need assistance choosing the right power solution? Our team at Sunrise Industries is always ready to help. Reach out today — we’re just a call or message away!
                   </p>
 
                   <p className="text-base text-black leading-relaxed">

@@ -16,7 +16,7 @@ interface Product {
   image: string;
 }
 
-export default function AdminProductsPage() {
+export default function UserProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,8 +40,7 @@ export default function AdminProductsPage() {
   return (
     <section>
       <Breadcrumb title={"Admin Products"} pages={["Admin Products"]} />
-
-      <section className="overflow-hidden relative pb-20 pt-5 lg:pt-10">
+      <section className=" bg-white md:pt-10 lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-0 pb-8 pt-3 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex justify-start">
             <Link

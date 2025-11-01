@@ -16,7 +16,7 @@ export default function AdminWarranties() {
   return (
     <section>
         <Breadcrumb title={"Warranty Registrations"} pages={["Warranty Registrations"]} />
-    <div className="p-6">
+    <div className="p-6 bg-white min-h-screen mt-10 rounded-md">
       <table className="w-full border border-gray-300 text-sm">
         <thead>
           <tr className="bg-gray-100">
@@ -24,7 +24,7 @@ export default function AdminWarranties() {
             <th className="p-2 text-left">userName</th>
             <th className="p-2 text-left">phone</th>
             <th className="p-2 text-left">Purchase Date</th>
-            <th className="p-2 text-left">Status</th>
+            <th className="p-2 text-left">Address</th>
           </tr>
         </thead>
         <tbody>
@@ -37,13 +37,18 @@ export default function AdminWarranties() {
               <td className="p-2">{item.userName}</td>
               <td className="p-2">{item.phone}</td>
               <td className="p-2">{new Date(item.createdAt).toLocaleDateString()}</td>
-              <td className="p-2">
+              <td>
+                <p className="text-black">{item.address}</p>
+                <p>{item.state}</p>
+                <p>{item.district}</p>
+              </td>
+              {/* <td className="p-2">
                 {!item.viewed ? (
                   <span className="text-red-500 font-medium">New Registration</span>
                 ) : (
                   <span className="text-green ">Viewed</span>
                 )}
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>

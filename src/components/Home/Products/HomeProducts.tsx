@@ -16,7 +16,7 @@ interface Product {
   category: string;
 }
 
-export default function UserProductsPage() {
+export default function HomePageProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -48,10 +48,20 @@ export default function UserProductsPage() {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <Breadcrumb title="Products" pages={["products"]} />
-
-      <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-        {products.map((product) => (
+      <section className=" bg-white md:pt-10 lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-0 pb-8 pt-3 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+        <div className="flex">
+                <div className="flex-1" >
+                    <h4 className="mb-3 text-xl font-medium text-red-dark">
+                    Complete Power Solutions Under One Roof
+                  </h4>
+                  <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[44px] md:leading-tight dark:text-white">
+                    Our Products
+                  </h2>
+                </div>
+            </div>
+        <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+            
+        {products.slice(0, 3).map((product) => (
           <div
             key={product._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col"
@@ -90,7 +100,19 @@ export default function UserProductsPage() {
             No products available.
           </p>
         )}
+
+       
       </div>
+       <div>
+            <p className="text-black text-center mt-10 mx-4 mb-4">From long-lasting tubular batteries to advanced lithium systems, Hi-Amps delivers dependable energy for every need. Each product reflects our promise of “Quality Beyond Your Need” — engineered for performance, durability, and trust.</p>
+            <div className="flex justify-center">
+                <Link href={'/products'} className=" justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-red"> View All Our Products
+                              </Link>
+            </div>
+        </div>
+
+      </section>
+      
     </>
   );
 }

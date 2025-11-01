@@ -196,7 +196,7 @@ const AdminHeader = () => {
 
             {/* // <!--=== Nav Right Start ===--> */}
             <div className="hidden xl:block">
-              <ul className="flex items-center gap-5.5">
+              {/* <ul className="flex items-center gap-5.5">
                 <li className="py-4">
                   <a
                     href="#"
@@ -244,7 +244,7 @@ const AdminHeader = () => {
                     Wishlist
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
             {/* <!--=== Nav Right End ===--> */}
           </div>
