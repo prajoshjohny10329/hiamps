@@ -179,16 +179,16 @@ export default function WarrantyCheck() {
                 <div
                   id="warranty-card"
                   className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans mx-auto mt-4 max-w-md"
-                  style={{
-                    backgroundImage: "url('/images/pages/products/hi-amps-all-products.webp')",
-                    backgroundSize: "120px",
-                    backgroundPosition: "right",
-                    backgroundRepeat: "no-repeat",
-                  }}
+                  // style={{
+                  //   backgroundImage: "url('/images/pages/products/hi-amps-all-products.webp')",
+                  //   backgroundSize: "120px",
+                  //   backgroundPosition: "right",
+                  //   backgroundRepeat: "no-repeat",
+                  // }}
                 >
                   {/* Logo */}
                   <div className="flex justify-center mb-3">
-                    <div className="w-full flex justify-center">
+                    {/* <div className="w-full flex justify-center">
                       <Image
                       width={50}
                       height={50}
@@ -196,10 +196,10 @@ export default function WarrantyCheck() {
                       alt="HiAmps Logo"
                       className="w-24 h-auto"
                     />
-                    </div>
+                    </div> */}
                   </div>
 
-                  <h2 className="text-2xl font-bold text-center text-blue-700 mb-2 uppercase">
+                  <h2 className="text-2xl font-bold text-center text-blue-700 mb-5 uppercase">
                     Warranty Certificate
                   </h2>
                   {/* <p className="text-center text-sm text-gray-500 mb-4">
