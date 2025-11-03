@@ -1,5 +1,6 @@
 "use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 
@@ -780,6 +781,7 @@ const stateDistrictData: Record<string, string[]> = {
 };
 
 export default function WarrantyRegister() {
+  const router = useRouter(); // ✅ Initialize router
   const [form, setForm] = useState({
     serialNumber: "",
     userName: "",
@@ -844,19 +846,22 @@ export default function WarrantyRegister() {
 
     if (res.ok) {
       toast.success(data.message);
-      setForm({
-        serialNumber: "",
-        userName: "",
-        phone: "",
-        email: "",
-        category: "",
-        productName: "",
-        purchaseDate: "",
-        state: "",
-        district: "",
-        address: "",
-      });
-      setDistricts([]);
+      // setForm({
+      //   serialNumber: "",
+      //   userName: "",
+      //   phone: "",
+      //   email: "",
+      //   category: "",
+      //   productName: "",
+      //   purchaseDate: "",
+      //   state: "",
+      //   district: "",
+      //   address: "",
+      // });
+      // setDistricts([]);
+      setTimeout(() => {
+        router.push(`/warranty-check?serial=${form.serialNumber}`);
+      }, 2000);
     } else {
       toast.error(data.message);
     }

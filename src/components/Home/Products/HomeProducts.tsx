@@ -71,7 +71,7 @@ export default function HomePageProducts() {
               height={600}
               src={product.image || "/placeholder.png"}
               alt={product.name}
-              className="w-full h-60 object-contain"
+              className="w-full h-60 object-contain bg-red-dark"
             />
             <div className="p-4 flex flex-col gap-2 flex-1">
               <h2 className="font-semibold text-black text-xl">{product.name}</h2>

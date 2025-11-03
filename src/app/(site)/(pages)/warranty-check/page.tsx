@@ -1,77 +1,101 @@
 "use client";
+
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import { useState } from "react";
 import { toast } from "react-hot-toast";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Image from "next/image";
 
 export default function WarrantyCheck() {
+  const searchParams = useSearchParams();
+  const serialFromUrl = searchParams.get("serial");
+
   const [searchType, setSearchType] = useState("serial");
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(serialFromUrl || "");
   const [warranties, setWarranties] = useState<any[]>([]);
   const [selectedWarranty, setSelectedWarranty] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleCheck = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!searchValue.trim()) {
-    toast.error("Please enter a value");
-    return;
-  }
+  // ✅ Auto-fetch warranty if serial is present in URL
+  useEffect(() => {
+    if (serialFromUrl) {
+      (async () => {
+        setLoading(true);
+        try {
+          const res = await fetch(`/api/warranty/search?serial=${serialFromUrl}`);
+          const data = await res.json();
 
-  setLoading(true);
-  setWarranties([]);
-  setSelectedWarranty(null);
-
-  try {
-    const res = await fetch(`/api/warranty/search?${searchType}=${searchValue}`);
-    const data = await res.json();
-
-    if (!res.ok) {
-      toast.error(data.message || "Warranty not found");
-    } else {
-      if (Array.isArray(data)) {
-        setWarranties(data);
-        toast.success(`Found ${data.length} warranty${data.length > 1 ? "ies" : ""}`);
-
-        // ✅ Auto-select if only one warranty is returned
-        if (data.length === 1) {
-          setSelectedWarranty(data[0]);
+          if (res.ok) {
+            setSelectedWarranty(data);
+            toast.success("Warranty found!");
+          } else {
+            toast.error(data.message || "No warranty found");
+          }
+        } catch {
+          toast.error("Failed to fetch warranty details.");
+        } finally {
+          setLoading(false);
         }
-      } else {
-        setSelectedWarranty(data);
-        toast.success("Warranty found!");
-      }
+      })();
     }
-  } catch (error) {
-    console.error(error);
-    toast.error("Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+  }, [serialFromUrl]);
 
+  // ✅ Manual Search
+  const handleCheck = async (e: React.FormEvent) => {
+    e.preventDefault();
 
+    if (!searchValue.trim()) {
+      toast.error("Please enter a valid value");
+      return;
+    }
+
+    setLoading(true);
+    setWarranties([]);
+    setSelectedWarranty(null);
+
+    try {
+      const res = await fetch(`/api/warranty/search?${searchType}=${searchValue}`);
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || "Warranty not found");
+      } else {
+        if (Array.isArray(data)) {
+          setWarranties(data);
+          toast.success(`Found ${data.length} warranty${data.length > 1 ? " records" : ""}`);
+
+          if (data.length === 1) {
+            setSelectedWarranty(data[0]);
+          }
+        } else {
+          setSelectedWarranty(data);
+          toast.success("Warranty found!");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ✅ PDF Download
   const handleDownload = async () => {
     const card = document.getElementById("warranty-card");
     if (!card) return;
 
-    const canvas = await html2canvas(card);
+    const canvas = await html2canvas(card, { scale: 2 });
     const imgData = canvas.toDataURL("image/png");
 
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "pt",
-      format: "a4",
-    });
+    const pdf = new jsPDF("p", "pt", "a4");
+    const width = pdf.internal.pageSize.getWidth();
+    const height = (canvas.height * width) / canvas.width;
 
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const imgWidth = pageWidth - 40;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-    pdf.addImage(imgData, "PNG", 20, 20, imgWidth, imgHeight);
-    pdf.save("WarrantyCard.pdf");
+    pdf.addImage(imgData, "PNG", 0, 20, width, height);
+    pdf.save("Warranty_Card.pdf");
   };
 
   return (
@@ -80,14 +104,14 @@ export default function WarrantyCheck() {
 
       <div className="max-w-6xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left Column — Search Form */}
+          {/* ✅ Left Column — Search Form */}
           <div>
             <h2 className="text-2xl font-semibold text-red-dark mb-4">
               Check Your Product Warranty
             </h2>
             <p className="text-black mb-4 text-sm">
-              Search your product warranty using either <strong>Serial Number</strong> or{" "}
-              <strong>Phone Number</strong>.
+              Search your product warranty using either{" "}
+              <strong>Serial Number</strong> or <strong>Phone Number</strong>.
             </p>
 
             <form
@@ -119,7 +143,7 @@ export default function WarrantyCheck() {
                 </label>
               </div>
 
-              {/* Input */}
+              {/* Input Field */}
               <input
                 type={searchType === "phone" ? "tel" : "text"}
                 placeholder={
@@ -143,13 +167,14 @@ export default function WarrantyCheck() {
               </button>
             </form>
 
+            {/* Loading message */}
             {loading && (
               <p className="text-center mt-4 text-gray-500 text-sm">
                 Checking warranty details...
               </p>
             )}
 
-            {/* Show list if multiple warranties */}
+            {/* Multiple warranty results */}
             {warranties.length > 1 && (
               <div className="mt-6">
                 <h3 className="text-lg font-semibold mb-2 text-black">
@@ -178,41 +203,30 @@ export default function WarrantyCheck() {
             )}
           </div>
 
-          {/* Right Column — Warranty Card */}
+          {/* ✅ Right Column — Warranty Card */}
           <div>
             {selectedWarranty && (
               <div className="animate-fadeIn">
                 <div
                   id="warranty-card"
                   className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans mx-auto mt-4 max-w-md"
-                  // style={{
-                  //   backgroundImage: "url('/images/pages/products/hi-amps-all-products.webp')",
-                  //   backgroundSize: "120px",
-                  //   backgroundPosition: "right",
-                  //   backgroundRepeat: "no-repeat",
-                  // }}
                 >
                   {/* Logo */}
                   <div className="flex justify-center mb-3">
-                    {/* <div className="w-full flex justify-center">
-                      <Image
-                      width={50}
-                      height={50}
+                    <Image
+                      width={120}
+                      height={60}
                       src="/images/logo/hiamps-logo.webp"
                       alt="HiAmps Logo"
-                      className="w-24 h-auto"
+                      className="w-28 h-auto"
                     />
-                    </div> */}
                   </div>
 
                   <h2 className="text-2xl font-bold text-center text-blue-700 mb-5 uppercase">
                     Warranty Certificate
                   </h2>
-                  {/* <p className="text-center text-sm text-gray-500 mb-4">
-                    
-                  </p> */}
 
-                  {/* Warranty Info */}
+                  {/* Warranty Details */}
                   <div className="space-y-2 text-sm">
                     <p><strong>Serial Number:</strong> {selectedWarranty.serialNumber}</p>
                     <p><strong>Customer Name:</strong> {selectedWarranty.userName}</p>
@@ -222,12 +236,10 @@ export default function WarrantyCheck() {
                     <p><strong>Product Name:</strong> {selectedWarranty.productName}</p>
                     <p>
                       <strong>Purchase Date:</strong>{" "}
-                      {new Date(selectedWarranty.createdAt).toLocaleDateString("en-IN", {
-                        timeZone: "Asia/Kolkata",
-                      })}
+                      {new Date(selectedWarranty.createdAt).toLocaleDateString("en-IN")}
                     </p>
                     <p>
-                      <strong>Warranty Months:</strong>{" "}
+                      <strong>Warranty Period:</strong>{" "}
                       {selectedWarranty.warrantyMonths} Months
                     </p>
                     <p>
@@ -237,7 +249,7 @@ export default function WarrantyCheck() {
                           new Date(selectedWarranty.createdAt).getMonth() +
                             selectedWarranty.warrantyMonths
                         )
-                      ).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" })}
+                      ).toLocaleDateString("en-IN")}
                     </p>
                   </div>
 
@@ -261,6 +273,7 @@ export default function WarrantyCheck() {
                   </div>
                 </div>
 
+                {/* ✅ Download Button */}
                 <button
                   onClick={handleDownload}
                   className="mt-6 w-full bg-red-dark hover:bg-red text-white py-2 rounded-md font-semibold transition"

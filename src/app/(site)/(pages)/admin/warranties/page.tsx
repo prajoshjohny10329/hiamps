@@ -57,7 +57,7 @@ export default function AdminWarranties() {
       <div className="p-6 bg-white mt-10 rounded-md">
         {/* Search Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-3">
-          <h2 className="text-lg font-semibold text-gray-800">
+          <h2 className="text-lg font-semibold text-black">
             Warranty Registrations ({filtered.length})
           </h2>
           <input
@@ -65,21 +65,19 @@ export default function AdminWarranties() {
             placeholder="Search by name, phone, serial, district..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full sm:w-80 focus:ring-2 focus:ring-red-500 outline-none"
+            className="border border-gray-300 rounded-md px-3 py-2 w-full sm:w-80 placeholder:text-dark focus:ring-2 focus:ring-red-dark outline-none"
           />
         </div>
 
         {/* ✅ Loading State */}
         {loading ? (
-          <div className="flex items-center justify-center h-60">
-            <div className="flex flex-col items-center text-gray-600">
-              <div className="loader mb-3"></div>
-              <p className="text-sm font-medium">Loading warranty data...</p>
-            </div>
-          </div>
+          <div className="flex flex-col justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-red-dark border-t-transparent rounded-full animate-spin"></div>
+        <p className="mt-4 text-black font-medium">Loading products...</p>
+      </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 text-sm">
+          <div className="overflow-x-auto ">
+            <table className="w-full border border-gray-200 text-sm mt-3">
               <thead>
                 <tr className="bg-gray-100 text-black">
                   <th className="p-3 text-left whitespace-nowrap">Serial Number</th>

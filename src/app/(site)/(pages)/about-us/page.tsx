@@ -20,7 +20,6 @@ export default function AboutPage() {
       <CounterSection />
       <SunriseIndustries />
       <ContactSection />
-
     </section>
   );
 }
