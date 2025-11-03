@@ -62,6 +62,7 @@ export default function HomePageProducts() {
         <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
             
         {products.slice(0, 3).map((product) => (
+          <Link href={`/products/${product._id}`}>
           <div
             key={product._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col"
@@ -78,22 +79,11 @@ export default function HomePageProducts() {
               <h2 className="font-semibold text-black text-xl">{product.name}</h2>
               <div className="flex justify-between items-center">
                 <p className="text-sm text-red-dark">{product.category}</p>
-                {product.price && (
-                  <p className="text-black font-extrabold text-xl">₹ {product.price}</p>
-                )}
               </div>
 
-              {/* Buttons */}
-              <div className="mt-2 flex gap-2">
-                <Link
-                        href={`/products/${product._id}`}
-                        className="bg-red-dark hover:bg-red text-white mt-5 px-10  py-2 rounded"
-                      >
-                        View Product
-                      </Link>
-              </div>
             </div>
           </div>
+          </Link>
         ))}
 
         {products.length === 0 && (

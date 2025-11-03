@@ -68,16 +68,13 @@ export default function UserProductsPage() {
               <h2 className="font-semibold text-black text-xl">{product.name}</h2>
               <div className="flex justify-between items-center">
                 <p className="text-sm text-red-dark">{product.category}</p>
-                {product.price && (
-                  <p className="text-black font-extrabold text-xl">₹ {product.price}</p>
-                )}
               </div>
 
               {/* Buttons */}
               <div className="mt-2 flex gap-2">
                 <Link
                         href={`/products/${product._id}`}
-                        className="bg-red-dark hover:bg-red text-white mt-5 px-10  py-2 rounded"
+                        className="bg-red hover:bg-red text-white mt-5 px-10  py-2 rounded"
                       >
                         View Product
                       </Link>

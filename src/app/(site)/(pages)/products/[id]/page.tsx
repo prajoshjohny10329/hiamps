@@ -58,7 +58,7 @@ export default function ProductDetailsPage() {
     <Breadcrumb title={"View Single Product"} pages={["View Single Product"]} />
     <section ref={ref} className="mb-5" >
           <div className="xl:container ">
-            <div className=" bg-white lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+            <div className=" bg-white lg:m-20 m-0 rounded-lg shadow-xl  overflow-hidden px-8 pt-0 md:px-[70px]  lg:px-[60px]  xl:px-[70px] ">
     
               <div className="w-full">
                 <div className="-mx-4 flex w-full flex-wrap items-center flex-col-reverse md:flex-row-reverse">
@@ -95,9 +95,6 @@ export default function ProductDetailsPage() {
                         {product.name}
                       </h2>
                       <div>
-                          <p className="text-base text-black leading-relaxed mb-4">
-                            <strong>Price:</strong> ₹{product.price}
-                          </p>
                           <p className="text-base text-black leading-relaxed mb-4">
                             <strong>Warranty:</strong> {product.warranty} months
                           </p>
