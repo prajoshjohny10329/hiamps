@@ -108,11 +108,11 @@ export default function ProductDetailsPage() {
                       </p>
     
                       <div className="flex gap-3 mt-9">
-                      <button
+                      {/* <button
                         className="justify-center py-3 px-7 text-white bg-red-dark font-medium rounded-md ease-out duration-200 hover:bg-green"
                       >
                         Enquiry Now
-                      </button>
+                      </button> */}
                     </div>
                     </div>
                   </motion.div>
