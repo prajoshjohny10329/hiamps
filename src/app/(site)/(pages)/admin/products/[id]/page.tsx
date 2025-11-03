@@ -17,6 +17,7 @@ interface Product {
   description: string;
   price: number;
   warranty: number;
+  pWarranty: number;
   image: string;
   category: string;
 }
@@ -114,6 +115,9 @@ export default function ProductDetailsPage() {
                           </p>
                           <p className="text-base text-black leading-relaxed mb-4">
                             <strong>Warranty:</strong> {product.warranty} months
+                          </p>
+                          <p className="text-base text-black leading-relaxed mb-4">
+                            <strong>Pro-Rate Warranty:</strong> {product.pWarranty} months
                           </p>
                         </div>
     

@@ -3,7 +3,7 @@ import Product from "@/models/Product";
 
 export async function POST(req: Request) {
   try {
-    const { name, description, price, image, category, warranty } = await req.json();
+    const { name, description, price, image, category, warranty, pWarranty } = await req.json();
 
 
     if (!name || !category) {
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     await connectDB();
 
-    console.log(warranty);
+    console.log(pWarranty);
 
     // Create product
     const product = await Product.create({
@@ -22,6 +22,7 @@ export async function POST(req: Request) {
       image,
       category,
       warranty,
+      pWarranty,
     });
 
     return Response.json(product, { status: 201 });

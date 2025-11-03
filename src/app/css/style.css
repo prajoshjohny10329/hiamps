@@ -232,8 +232,14 @@ input[type='search']::-webkit-search-results-decoration {
   animation: bounce 1.2s infinite ease-in-out 0.4s;
 }
 .bg-red-1{
-  backgcolround: red;
+  background: red;
 }
 .bg-black{
   background: black;
+}
+.hero-text{
+  text-shadow: 1px 0px 0px black;
+}
+.hero-bg{
+  background: #e1e1e1;
 }

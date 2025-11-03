@@ -16,6 +16,7 @@ interface ProductForm {
   description: string;
   price: number | string;
   warranty: number | string;
+  pWarranty: number | string;
   category: string;
   image: string;
 }
@@ -27,6 +28,7 @@ export default function AddProductPage() {
     description: "",
     price: "",
     warranty: "",
+    pWarranty: "",
     category: "",
     image: "",
   });
@@ -189,6 +191,20 @@ export default function AddProductPage() {
                 placeholder="12 (Month)"
                 onChange={handleChange}
                 value={formData.warranty}
+                className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none"
+                required
+              />
+            </div>
+            <div className="w-full">
+              <label htmlFor="pWarranty" className="block mb-2.5 text-black">
+                Pro-Rate Warranty <span className="text-red">*</span>
+              </label>
+              <input
+                name="pWarranty"
+                type="number"
+                placeholder="12 (Month)"
+                onChange={handleChange}
+                value={formData.pWarranty}
                 className="rounded-md border border-gray-3 bg-gray-1 w-full py-2.5 px-5 outline-none"
                 required
               />

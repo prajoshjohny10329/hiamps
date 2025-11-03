@@ -9,7 +9,7 @@ const Hero = () => {
       <div className=" w-full mx-auto ">
         <div className="flex flex-wrap gap-5">
           <div className=" w-full">
-            <div className="relative z-1 rounded-[10px] bg-white overflow-hidden">
+            <div className="relative z-1 rounded-[10px] hero-bg overflow-hidden">
               {/* <!-- bg shapes --> */}
               <Image
                 src="/images/pages/bg/3.png"

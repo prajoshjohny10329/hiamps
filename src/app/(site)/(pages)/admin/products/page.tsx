@@ -116,6 +116,9 @@ export default function UserProductsPage() {
                       <p className="px-3 pb-2 font-semibold text-black">
                         <strong>{product.warranty}</strong> Months
                       </p>
+                      <p className="px-3 pb-2 font-semibold text-black">
+                        <strong>{product.warranty}</strong> Months
+                      </p>
                       <p className="px-3 pb-4 font-semibold text-black">
                         ₹{product.price}
                       </p>

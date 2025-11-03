@@ -25,11 +25,11 @@ const HeroCarousal = () => {
       className="hero-carousel"
     >
       <SwiperSlide>
-        <div className="px-0 md:px-20 lg:px-30 flex items-center pt-6 sm:pt-0 flex-col sm:flex-row">
+        <div className="px-0 md:px-20 lg:px-30 flex items-center pt-6 sm:pt-0 flex-col sm:flex-row ">
           <div className="w-full md:w-110   py-10 sm:py-15 lg:py-24.5 pl-4 sm:pl-7.5 lg:pl-12.5">
             
-            <h1 className="font-semibold text-black text-3xl  mb-1">Welcome To <span className="text-red-dark font-bold mb-3 text-3xl">Hiamps</span></h1>
-            <h2 className="font-semibold text-black text-3xl  mb-3">
+            <h1 className="font-semibold text-black text-3xl  mb-1 hero-text">Welcome To <span className="text-red-dark font-bold mb-3 text-3xl">Hiamps</span></h1>
+            <h2 className="font-semibold text-black text-3xl hero-text  mb-3">
               Explore Our Complete Range of Power Solutions
             </h2>
 
@@ -170,7 +170,7 @@ const HeroCarousal = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>
+      {/* <SwiperSlide>
         {" "}
         <div className="px-0 md:px-20 lg:px-30 flex items-center pt-6 sm:pt-0 flex-col sm:flex-row">
           <div className="w-full md:w-110   py-10 sm:py-15 lg:py-24.5 pl-4 sm:pl-7.5 lg:pl-12.5">
@@ -213,7 +213,7 @@ const HeroCarousal = () => {
             
           </div>
         </div>
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   );
 };

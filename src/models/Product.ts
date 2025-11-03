@@ -4,7 +4,8 @@ export interface IProduct extends Document {
   name: string;
   description?: string;
   price?: number;
-  warranty?: number;
+  warranty?: number; // Service Warranty
+  pWarranty?: number; // ProRate Warranty
   image?: string;
   category: string; 
   createdAt: Date;
@@ -17,6 +18,7 @@ const ProductSchema = new Schema<IProduct>(
     description: String,
     price: Number,
     warranty: Number,
+    pWarranty: Number,
     image: String,
     category: { type: String, required: true }, // ✅ simple string (not ObjectId)
   },

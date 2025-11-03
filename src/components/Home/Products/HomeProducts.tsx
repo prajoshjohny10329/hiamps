@@ -62,9 +62,9 @@ export default function HomePageProducts() {
         <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
             
         {products.slice(0, 3).map((product) => (
-          <Link href={`/products/${product._id}`}>
+          <Link href={`/products/${product._id}`} key={product._id}>
           <div
-            key={product._id}
+            
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col"
           >
             <Image
