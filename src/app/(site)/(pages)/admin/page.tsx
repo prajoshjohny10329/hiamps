@@ -35,11 +35,11 @@ export default function AdminPage() {
       <Breadcrumb title={"Admin DashBoard"} pages={["Admin DashBoard"]} />
     <div className="p-6 max-w-6xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center">
-        Registered Batteries
+        {/* Update...... */}
       </h2>
 
       {batteries.length === 0 ? (
-        <p className="text-center">No registrations yet.</p>
+        <p className="text-center"></p>
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full border border-gray-300 rounded-lg">
