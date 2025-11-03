@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroCarousal = () => {
   return (
@@ -36,12 +37,12 @@ const HeroCarousal = () => {
             From high-performance tubular batteries to advanced inverters — find the perfect power solution designed for your home, office, or industry.
             </p>
 
-            <a
+            <Link
               href="/products"
               className="inline-flex font-medium text-white text-custom-sm rounded-md bg-red-dark py-3 px-9 ease-out duration-200 hover:bg-red-dark mt-5"
             >
               View All Our Products
-            </a>
+            </Link>
           </div>
           <div className="relative flex-1 w-full">
             <Image
@@ -85,12 +86,12 @@ const HeroCarousal = () => {
               backup power for homes and offices.
             </p>
 
-            <a
+            <Link
               href="/products/power-backup-batteries"
               className="inline-flex font-medium text-white text-custom-sm rounded-md bg-red-dark py-3 px-9 ease-out duration-200 hover:bg-red-dark mt-5"
             >
               Explore Power Backup Batteries
-            </a>
+            </Link>
           </div>
           <div className="relative flex-1 w-full">
             <Image
@@ -136,12 +137,12 @@ const HeroCarousal = () => {
               Built with <strong>DSP Sinewave Technology, heavy-duty transformers,</strong> and <strong>real-time LCD monitoring</strong>, Hi-Amps Inverters deliver clean, efficient, and safe power for every application. Designed to work seamlessly with Hi-Amps Tubular Batteries, they ensure unmatched backup performance and long service life.
             </p>
 
-            <a
+            <Link
               href="/products/inverter-ups"
               className="inline-flex font-medium text-white text-custom-sm rounded-md bg-red-dark py-3 px-9 ease-out duration-200 hover:bg-red-dark mt-5"
             >
               Explore Hi-Amps Inverters
-            </a>
+            </Link>
           </div>
           <div className="relative flex-1 w-full">
             <Image
@@ -187,12 +188,12 @@ const HeroCarousal = () => {
               Keep your inverter batteries <strong>protected, organized, and mobile</strong> with Hi-Amps Battery Cabinets. Built with a <strong>durable ventilated design</strong>, they prevent overheating and dust buildup while ensuring smooth mobility and easy maintenance for homes and offices alike.
             </p>
 
-            <a
+            <Link
               href="/products/battery-cabinet"
               className="inline-flex font-medium text-white text-custom-sm rounded-md bg-red-dark py-3 px-9 ease-out duration-200 hover:bg-red-dark mt-5"
             >
               View Battery Cabinets
-            </a>
+            </Link>
           </div>
           <div className="relative flex-1 w-full">
             <Image
