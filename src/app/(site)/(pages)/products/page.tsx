@@ -62,10 +62,12 @@ export default function UserProductsPage() {
               src={product.image || "/placeholder.png"}
               alt={product.name}
               className="w-full h-60 object-contain"
-              style={{background: "red"}}
+              style={{ background: "red" }}
             />
             <div className="p-4 flex flex-col gap-2 flex-1">
-              <h2 className="font-semibold text-black text-xl">{product.name}</h2>
+              <h2 className="font-semibold text-black text-xl">
+                {product.name}
+              </h2>
               <div className="flex justify-between items-center">
                 <p className="text-sm text-red-dark">{product.category}</p>
               </div>
@@ -73,11 +75,11 @@ export default function UserProductsPage() {
               {/* Buttons */}
               <div className="mt-2 flex gap-2">
                 <Link
-                        href={`/products/${product._id}`}
-                        className="bg-red hover:bg-red text-white mt-5 px-10  py-2 rounded"
-                      >
-                        View Product
-                      </Link>
+                  href={`/products/${product._id}`}
+                  className="bg-red hover:bg-red text-white mt-5 px-10  py-2 rounded"
+                >
+                  View Product
+                </Link>
               </div>
             </div>
           </div>
