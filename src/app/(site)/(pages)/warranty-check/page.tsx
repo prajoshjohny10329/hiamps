@@ -222,7 +222,7 @@ export default function WarrantyCheck() {
                     <p><strong>Product Name:</strong> {selectedWarranty.productName}</p>
                     <p>
                       <strong>Purchase Date:</strong>{" "}
-                      {new Date(selectedWarranty.purchaseDate).toLocaleDateString("en-IN", {
+                      {new Date(selectedWarranty.createdAt).toLocaleDateString("en-IN", {
                         timeZone: "Asia/Kolkata",
                       })}
                     </p>
@@ -233,8 +233,8 @@ export default function WarrantyCheck() {
                     <p>
                       <strong>Valid Until:</strong>{" "}
                       {new Date(
-                        new Date(selectedWarranty.purchaseDate).setMonth(
-                          new Date(selectedWarranty.purchaseDate).getMonth() +
+                        new Date(selectedWarranty.createdAt).setMonth(
+                          new Date(selectedWarranty.createdAt).getMonth() +
                             selectedWarranty.warrantyMonths
                         )
                       ).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" })}
