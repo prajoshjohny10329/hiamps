@@ -14,38 +14,44 @@ export default function WarrantyCheck() {
   const [loading, setLoading] = useState(false);
 
   const handleCheck = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchValue.trim()) {
-      toast.error("Please enter a value");
-      return;
-    }
+  e.preventDefault();
+  if (!searchValue.trim()) {
+    toast.error("Please enter a value");
+    return;
+  }
 
-    setLoading(true);
-    setWarranties([]);
-    setSelectedWarranty(null);
+  setLoading(true);
+  setWarranties([]);
+  setSelectedWarranty(null);
 
-    try {
-      const res = await fetch(`/api/warranty/search?${searchType}=${searchValue}`);
-      const data = await res.json();
+  try {
+    const res = await fetch(`/api/warranty/search?${searchType}=${searchValue}`);
+    const data = await res.json();
 
-      if (!res.ok) {
-        toast.error(data.message || "Warranty not found");
-      } else {
-        if (Array.isArray(data)) {
-          setWarranties(data);
-          toast.success(`Found ${data.length} warranties`);
-        } else {
-          setSelectedWarranty(data);
-          toast.success("Warranty found!");
+    if (!res.ok) {
+      toast.error(data.message || "Warranty not found");
+    } else {
+      if (Array.isArray(data)) {
+        setWarranties(data);
+        toast.success(`Found ${data.length} warranty${data.length > 1 ? "ies" : ""}`);
+
+        // ✅ Auto-select if only one warranty is returned
+        if (data.length === 1) {
+          setSelectedWarranty(data[0]);
         }
+      } else {
+        setSelectedWarranty(data);
+        toast.success("Warranty found!");
       }
-    } catch (error) {
-      console.error(error);
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleDownload = async () => {
     const card = document.getElementById("warranty-card");
