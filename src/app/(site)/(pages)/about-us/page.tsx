@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section id="about-us" className="mx-auto py-6 ">
+    <section className="mx-auto py-6" style={{background: 'red'}}>
       <Breadcrumb title={"About Us"} pages={["About-us"]} />
       <BrandStorySection />
       <CounterSection />

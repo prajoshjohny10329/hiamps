@@ -2,7 +2,7 @@ import AnimatedCounter from "@/components/Common/AnimatedCounter";
 
 export default function CounterSection() {
   return (
-    <section className="bg-white py-20 rounded-3xl shadow-lg">
+    <section className="bg-white py-10 rounded-3xl shadow-lg">
       <div className="max-w-[1170px] w-full mx-auto my-10 bg-slate-50 flex items-center justify-center">
       <div className="grid md:grid-cols-3 gap-10 text-center">
         {/* Counter 1 */}

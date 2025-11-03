@@ -1,0 +1,290 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import Breadcrumb from "@/components/Common/Breadcrumb";
+import { toast } from "react-hot-toast";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import Image from "next/image";
+
+export default function WarrantyCheck() {
+  const searchParams = useSearchParams();
+  const serialFromUrl = searchParams.get("serial");
+
+  const [searchType, setSearchType] = useState("serial");
+  const [searchValue, setSearchValue] = useState(serialFromUrl || "");
+  const [warranties, setWarranties] = useState<any[]>([]);
+  const [selectedWarranty, setSelectedWarranty] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+
+  // ✅ Auto-fetch warranty if serial is present in URL
+  useEffect(() => {
+    if (serialFromUrl) {
+      (async () => {
+        setLoading(true);
+        try {
+          const res = await fetch(`/api/warranty/search?serial=${serialFromUrl}`);
+          const data = await res.json();
+
+          if (res.ok) {
+            setSelectedWarranty(data);
+            toast.success("Warranty found!");
+          } else {
+            toast.error(data.message || "No warranty found");
+          }
+        } catch {
+          toast.error("Failed to fetch warranty details.");
+        } finally {
+          setLoading(false);
+        }
+      })();
+    }
+  }, [serialFromUrl]);
+
+  // ✅ Manual Search
+  const handleCheck = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!searchValue.trim()) {
+      toast.error("Please enter a valid value");
+      return;
+    }
+
+    setLoading(true);
+    setWarranties([]);
+    setSelectedWarranty(null);
+
+    try {
+      const res = await fetch(`/api/warranty/search?${searchType}=${searchValue}`);
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || "Warranty not found");
+      } else {
+        if (Array.isArray(data)) {
+          setWarranties(data);
+          toast.success(`Found ${data.length} warranty${data.length > 1 ? " records" : ""}`);
+
+          if (data.length === 1) {
+            setSelectedWarranty(data[0]);
+          }
+        } else {
+          setSelectedWarranty(data);
+          toast.success("Warranty found!");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ✅ PDF Download
+  const handleDownload = async () => {
+    const card = document.getElementById("warranty-card");
+    if (!card) return;
+
+    const canvas = await html2canvas(card, { scale: 2 });
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF("p", "pt", "a4");
+    const width = pdf.internal.pageSize.getWidth();
+    const height = (canvas.height * width) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 20, width, height);
+    pdf.save("Warranty_Card.pdf");
+  };
+
+  return (
+    <section>
+      <Breadcrumb title="Product Warranty Check" pages={["Warranty Check"]} />
+
+      <div className="max-w-6xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* ✅ Left Column — Search Form */}
+          <div>
+            <h2 className="text-2xl font-semibold text-red-dark mb-4">
+              Check Your Product Warranty
+            </h2>
+            <p className="text-black mb-4 text-sm">
+              Search your product warranty using either{" "}
+              <strong>Serial Number</strong> or <strong>Phone Number</strong>.
+            </p>
+
+            <form
+              onSubmit={handleCheck}
+              className="flex flex-col gap-4 p-4 bg-gray-50 rounded-lg"
+            >
+              {/* Search Type */}
+              <div className="flex gap-6 text-black text-sm">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="serial"
+                    checked={searchType === "serial"}
+                    className="accent-red-dark cursor-pointer"
+                    onChange={() => setSearchType("serial")}
+                  />
+                  Serial Number
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="phone"
+                    checked={searchType === "phone"}
+                    className="accent-red-dark cursor-pointer"
+                    onChange={() => setSearchType("phone")}
+                  />
+                  Phone Number
+                </label>
+              </div>
+
+              {/* Input Field */}
+              <input
+                type={searchType === "phone" ? "tel" : "text"}
+                placeholder={
+                  searchType === "serial"
+                    ? "Enter your product serial number"
+                    : "Enter your registered phone number"
+                }
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                className="border-b-2 border-gray-300 bg-transparent px-3 py-2 focus:border-red-500 outline-none"
+                required
+              />
+
+              {/* Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="bg-red-dark hover:bg-red text-white py-2 rounded-md transition font-semibold"
+              >
+                {loading ? "Checking..." : "Check Warranty"}
+              </button>
+            </form>
+
+            {/* Loading message */}
+            {loading && (
+              <p className="text-center mt-4 text-gray-500 text-sm">
+                Checking warranty details...
+              </p>
+            )}
+
+            {/* Multiple warranty results */}
+            {warranties.length > 1 && (
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-2 text-black">
+                  Select Your Product:
+                </h3>
+                <ul className="space-y-2">
+                  {warranties.map((item) => (
+                    <li
+                      key={item._id}
+                      onClick={() => setSelectedWarranty(item)}
+                      className={`p-3 border rounded-md cursor-pointer hover:bg-gray-100 transition ${
+                        selectedWarranty?._id === item._id
+                          ? "border-red-500 bg-gray-50"
+                          : "border-gray-300"
+                      }`}
+                    >
+                      <p className="font-medium text-red-dark">{item.productName}</p>
+                      <p className="text-sm text-black">
+                        Serial: {item.serialNumber} — Purchased on{" "}
+                        {new Date(item.purchaseDate).toLocaleDateString("en-IN")}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* ✅ Right Column — Warranty Card */}
+          <div>
+            {selectedWarranty && (
+              <div className="animate-fadeIn">
+                <div
+                  id="warranty-card"
+                  className="relative bg-white p-8 border-4 border-blue-600 rounded-xl shadow-xl text-dark font-sans mx-auto mt-4 max-w-md"
+                >
+                  {/* Logo */}
+                  <div className="flex justify-center mb-3">
+                    <Image
+                      width={120}
+                      height={60}
+                      src="/images/logo/hiamps-logo.webp"
+                      alt="HiAmps Logo"
+                      className="w-28 h-auto"
+                    />
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-center text-blue-700 mb-5 uppercase">
+                    Warranty Certificate
+                  </h2>
+
+                  {/* Warranty Details */}
+                  <div className="space-y-2 text-sm">
+                    <p><strong>Serial Number:</strong> {selectedWarranty.serialNumber}</p>
+                    <p><strong>Customer Name:</strong> {selectedWarranty.userName}</p>
+                    <p><strong>Phone:</strong> {selectedWarranty.phone}</p>
+                    <p><strong>Email:</strong> {selectedWarranty.email || "N/A"}</p>
+                    <p><strong>Category:</strong> {selectedWarranty.category}</p>
+                    <p><strong>Product Name:</strong> {selectedWarranty.productName}</p>
+                    <p>
+                      <strong>Purchase Date:</strong>{" "}
+                      {new Date(selectedWarranty.createdAt).toLocaleDateString("en-IN")}
+                    </p>
+                    <p>
+                      <strong>Warranty Period:</strong>{" "}
+                      {selectedWarranty.warrantyMonths} Months
+                    </p>
+                    <p>
+                      <strong>Valid Until:</strong>{" "}
+                      {new Date(
+                        new Date(selectedWarranty.createdAt).setMonth(
+                          new Date(selectedWarranty.createdAt).getMonth() +
+                            selectedWarranty.warrantyMonths
+                        )
+                      ).toLocaleDateString("en-IN")}
+                    </p>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="mt-6 text-center text-xs text-gray-500">
+                    <p>For service, contact HiAmps Customer Support</p>
+                    <p>
+                      Karnataka, Kerala, Tamil Nadu | +91 994 500 4857 |{" "}
+                      <a
+                        href="https://www.hiamps.co"
+                        target="_blank"
+                        className="text-blue-600 hover:underline"
+                      >
+                        www.hiamps.co
+                      </a>
+                    </p>
+                  </div>
+
+                  <div className="absolute bottom-4 right-6 text-right text-xs text-gray-500">
+                    <p>Authorized Signatory</p>
+                  </div>
+                </div>
+
+                {/* ✅ Download Button */}
+                <button
+                  onClick={handleDownload}
+                  className="mt-6 w-full bg-red-dark hover:bg-red text-white py-2 rounded-md font-semibold transition"
+                >
+                  Download Warranty Card
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

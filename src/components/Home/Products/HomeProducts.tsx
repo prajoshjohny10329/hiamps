@@ -39,9 +39,9 @@ export default function HomePageProducts() {
   // ✅ Loader while fetching data
   if (loading)
     return (
-      <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center min-h-fit bg-white">
         <div className="w-12 h-12 border-4 border-red-dark border-t-transparent rounded-full animate-spin"></div>
-        <p className="mt-4 text-gray-700 font-medium">Loading products...</p>
+        <p className="mt-4 text-white font-medium">Loading products...</p>
       </div>
     );
 
@@ -71,7 +71,8 @@ export default function HomePageProducts() {
               height={600}
               src={product.image || "/placeholder.png"}
               alt={product.name}
-              className="w-full h-60 object-contain bg-red-dark"
+              className="w-full h-60 object-contain brightness-110" 
+              style={{background:"red"}}
             />
             <div className="p-4 flex flex-col gap-2 flex-1">
               <h2 className="font-semibold text-black text-xl">{product.name}</h2>
