@@ -15,12 +15,13 @@ import InvertersUPS from "./Products/InvertersUPS";
 import BatteryTrolleyCabinets from "./Products/BatteryTrolleyCabinets";
 import HomePageProducts from "./Products/HomeProducts";
 import ContactSection from "./Contact/ContactSection";
+import AboutUsAtHome from "./About/AboutUsAtHome";
 
 const Home = () => {
   return (
     <main style={{ background: 'red' }}>
       <Hero />
-      <BrandStorySection />
+      <AboutUsAtHome />
       <HomePageProducts />
       <CounterSection />
       <PowerBackupBattery />

@@ -1,9 +1,10 @@
 "use client";
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import BrandStorySectionVideo from "./BrandStorySectionVideo";
+import AboutUsAtHomeVideo from "./AboutUsAtHomeVideo";
 
-export default function BrandStorySection() {
+export default function AboutUsAtHome() {
   const { ref, inView } = useInView({
     triggerOnce: false, // animation repeats on scroll up/down
     threshold: 0.2,
@@ -15,16 +16,18 @@ export default function BrandStorySection() {
         <div className="bg-white lg:m-20 m-0 rounded-lg shadow-xl relative z-10 overflow-hidden px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
 
-          <div className="w-full">
+          <div className="w-full flex-1">
             <div className="-mx-4 flex w-full flex-wrap items-center pt-[70px] flex-row-reverse">
               {/* Left Image Section */}
               <motion.div
-                className="w-full lg:w-1/2"
+                className="w-full px-4 lg:w-1/2"
                 initial={{ opacity: 0, x: 100 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <BrandStorySectionVideo />
+                <div className="relative z-30 mb-14 h-[490px] max-w-[600px] lg:mb-0">
+                  <AboutUsAtHomeVideo />
+                </div>
               </motion.div>
 
               {/* Right Text Section */}

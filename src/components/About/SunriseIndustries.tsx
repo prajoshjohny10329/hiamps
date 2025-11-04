@@ -25,11 +25,11 @@ export default function SunriseIndustries() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <Image
-                  src="/images/pages/bg/hi-amps-banner.webp"
+                  src="/images/pages/banner/hiamps-all-products.webp"
                   alt="Sunrise Industries"
                   width={1000}
                   height={1001}
-                  className="mx-auto max-w-full"
+                  className="mx-auto max-w-full rounded-md shadow-sm"
                 />
               </motion.div>
 
