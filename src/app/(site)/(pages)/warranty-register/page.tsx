@@ -846,22 +846,22 @@ export default function WarrantyRegister() {
 
     if (res.ok) {
       toast.success(data.message);
-      // setForm({
-      //   serialNumber: "",
-      //   userName: "",
-      //   phone: "",
-      //   email: "",
-      //   category: "",
-      //   productName: "",
-      //   purchaseDate: "",
-      //   state: "",
-      //   district: "",
-      //   address: "",
-      // });
-      // setDistricts([]);
+      setForm({
+        serialNumber: "",
+        userName: "",
+        phone: "",
+        email: "",
+        category: "",
+        productID: "",
+        purchaseDate: "",
+        state: "",
+        district: "",
+        address: "",
+      });
+      setDistricts([]);
       setTimeout(() => {
         router.push(`/warranty-check?serial=${form.serialNumber}`);
-      }, 2000);
+      }, 1000);
     } else {
       toast.error(data.message);
     }

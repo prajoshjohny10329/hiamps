@@ -1,4 +1,4 @@
-const stateDistrictData: Record<string, string[]> = {
+export const stateDistrictData: Record<string, string[]> = {
   "Andhra Pradesh": [
     "Anantapur",
     "Chittoor",
