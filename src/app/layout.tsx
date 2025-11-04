@@ -6,7 +6,6 @@ import "@/app/css/style.css";
 import { ReduxProvider } from "@/redux/provider";
 import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
-import PreviewSliderModal from "@/components/Common/PreviewSlider";
 import { SessionProvider } from "next-auth/react";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
@@ -47,7 +46,6 @@ export default function RootLayout({
                       <Toaster position="bottom-right" />
                     <QuickViewModal />
                     <CartSidebarModal />
-                    <PreviewSliderModal />
                   </PreviewSliderProvider>
                 </ModalProvider>
               </CartModalProvider>

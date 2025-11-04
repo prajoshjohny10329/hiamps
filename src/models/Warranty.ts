@@ -16,6 +16,7 @@ export interface IWarranty extends Document {
   state: string;
   district: string;
   address: string;
+  purpose: string;
 
 }
 
@@ -34,6 +35,7 @@ const warrantySchema = new Schema<IWarranty>(
     state: { type: String, required: true },
     district: { type: String, required: true },
     address: { type: String, required: true },
+    purpose: { type: String, required: true },
       
   },
   { timestamps: true }

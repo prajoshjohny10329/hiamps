@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   try {
     await connectDB();
     const data = await req.json();
-    const { serialNumber, userName, phone, email,  productID, purchaseDate, state, district, address  } = data;
+    const { serialNumber, userName, phone, email,  productID, purchaseDate, state, district, address, purpose  } = data;
 
     if (!serialNumber || !userName || !phone || !productID || !purchaseDate) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
@@ -40,7 +40,8 @@ export async function POST(req: Request) {
       pWarranty,
       state,
       district,
-      address
+      address,
+      purpose
     });
 
     await warrantyInput.save();
