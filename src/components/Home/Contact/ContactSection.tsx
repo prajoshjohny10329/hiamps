@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
@@ -38,7 +39,7 @@ export default function ContactSection() {
             <Phone className="text-red-dark w-6 h-6 mt-1" />
             <div>
               <h4 className="font-semibold text-black mb-1">Phone</h4>
-              <p className="text-black text-sm">+91 98765 43210</p>
+              <Link href={'tel:+91 994 500 4857'} className="text-black text-sm">+91 994 500 4857</Link>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { stateDistrictData } from "@/data/stateDistricts";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 
 const Contact = () => {
   const [districts, setDistricts] = useState<string[]>([]);
@@ -150,7 +151,9 @@ const Contact = () => {
                     <Phone className="text-red-dark w-6 h-6 mt-1" />
                     <div>
                       <h4 className="font-semibold text-black mb-1">Phone</h4>
-                      <p className="text-black text-sm">+91 98765 43210</p>
+                      <Link href={'tel:+91 994 500 4857'} className="text-black text-sm">+91 994 500 4857</Link>
+                      <br />
+                      <Link href={'tel:+91 990 194 1467'} className="text-black text-sm">+91 990 194 1467</Link>
                     </div>
                   </div>
 
