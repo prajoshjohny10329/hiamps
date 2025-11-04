@@ -788,7 +788,7 @@ export default function WarrantyRegister() {
     phone: "",
     email: "",
     category: "",
-    productName: "",
+    productID: "",
     purchaseDate: "",
     state: "",
     district: "",
@@ -967,20 +967,20 @@ export default function WarrantyRegister() {
                     </select>
                   </div>
                   <div className="w-full">
-                    <label htmlFor="productName" className="block mb-2.5">
+                    <label htmlFor="productID" className="block mb-2.5">
                       Product Name <span className="text-red">*</span>
                     </label>
 
                     <select
-                      name="productName"
-                      value={form.productName}
+                      name="productID"
+                      value={form.productID}
                       onChange={handleChange}
                       required
                       className="rounded-md border border-gray-3 text-dark bg-white placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     >
                       <option value="">Select You Product</option>
                       {products.map((pro: any) => (
-                        <option key={pro.name} value={pro.name}>
+                        <option key={pro.name} value={pro._id}>
                           {pro.name}
                         </option>
                       ))}

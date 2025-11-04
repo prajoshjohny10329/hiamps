@@ -23,9 +23,9 @@ export async function POST(req: Request) {
 
     // Calculate warranty validity
     const purchaseDate = new Date(battery.createdAt);
-    const warrantyMonths = battery.warrantyMonths || 2;
+    const sWarranty = battery.sWarranty || 2;
     const warrantyEnd = new Date(purchaseDate);
-    warrantyEnd.setFullYear(purchaseDate.getFullYear() + warrantyMonths);
+    warrantyEnd.setFullYear(purchaseDate.getFullYear() + sWarranty);
 
     const today = new Date();
     const remainingDays = Math.ceil((warrantyEnd.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       userName: battery.userName,
       productType: battery.productType,
       purchaseDate: purchaseDate.toDateString(),
-      warrantyMonths,
+      sWarranty,
       warrantyStatus,
     });
   } catch (error) {

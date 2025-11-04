@@ -7,18 +7,21 @@ export async function POST(req: Request) {
   try {
     await connectDB();
     const data = await req.json();
-    const { serialNumber, userName, phone, email, category, productName, purchaseDate, state, district, address  } = data;
+    const { serialNumber, userName, phone, email,  productID, purchaseDate, state, district, address  } = data;
 
-    if (!serialNumber || !userName || !phone || !category || !productName || !purchaseDate) {
+    if (!serialNumber || !userName || !phone || !productID || !purchaseDate) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
     }
 
-    const product = await Product.findOne({ name: productName });
+    const product = await Product.findOne({ _id: productID });
     if (!product) {
       return NextResponse.json({ message: "Product not found" }, { status: 404 });
     }
 
-    const warrantyMonths = product.warranty;
+    const sWarranty = product.warranty;
+    const pWarranty = product.pWarranty;
+    const category = product.category
+    const productName = product.name
 
     const existing = await Warranty.findOne({ serialNumber });
     if (existing) {
@@ -33,7 +36,8 @@ export async function POST(req: Request) {
       category,
       productName,
       purchaseDate,
-      warrantyMonths,
+      sWarranty,
+      pWarranty,
       state,
       district,
       address

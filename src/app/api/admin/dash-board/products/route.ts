@@ -4,7 +4,7 @@ import Product from "@/models/Product";
 export async function GET() {
   try {
     await connectDB();
-    const products = await Product.find().sort({ createdAt: -1 });
+    const products = await Product.find().sort({ createdAt: -1 }).limit(4); // only 4 products
     console.log(products);
     
     return Response.json(products, { status: 200 });

@@ -12,17 +12,23 @@ export default function AdminWarranties() {
   const [loading, setLoading] = useState(true); // ✅ Loading state
 
   // Fetch warranty list
-  useEffect(() => {
-    setLoading(true);
-    fetch("/api/warranty")
-      .then((res) => res.json())
-      .then((data) => {
-        setWarranties(data);
-        setFiltered(data);
-      })
-      .catch(() => toast.error("Failed to fetch warranty registrations"))
-      .finally(() => setLoading(false)); // ✅ Stop loading
-  }, []);
+useEffect(() => {
+  setLoading(true);
+  fetch("/api/warranty")
+    .then((res) => res.json())
+    .then((data) => {
+      setWarranties(data);
+      setFiltered(data);
+      
+      // ✅ Once fetched, mark all as viewed
+      fetch("/api/warranty/mark-viewed", { method: "PUT" })
+        .then(() => console.log("All warranties marked as viewed"))
+        .catch(() => console.warn("Failed to update viewed status"));
+    })
+    .catch(() => toast.error("Failed to fetch warranty registrations"))
+    .finally(() => setLoading(false));
+}, []);
+
 
   // Filter on search
   useEffect(() => {
@@ -85,7 +91,7 @@ export default function AdminWarranties() {
                   <th className="p-3 text-left whitespace-nowrap">Phone</th>
                   <th className="p-3 text-left whitespace-nowrap">Purchase Date</th>
                   <th className="p-3 text-left whitespace-nowrap">Address</th>
-                  <th className="p-3 text-left whitespace-nowrap text-center">Action</th>
+                  <th className="p-3 text-left whitespace-nowrap ">Action</th>
                 </tr>
               </thead>
               <tbody className="text-black">
@@ -109,7 +115,7 @@ export default function AdminWarranties() {
                           {item.district}, {item.state}
                         </p>
                       </td>
-                      <td className="p-3 text-center">
+                      <td className="p-3 ">
                         <button
                           onClick={() => setSelectedWarranty(item)}
                           className="bg-red-dark hover:bg-red-600 text-white px-3 py-1 rounded-md text-xs transition"
@@ -157,15 +163,25 @@ export default function AdminWarranties() {
               <p><strong>Email:</strong> {selectedWarranty.email || "N/A"}</p>
               <p><strong>Category:</strong> {selectedWarranty.category}</p>
               <p><strong>Product Name:</strong> {selectedWarranty.productName}</p>
-              <p><strong>Product warranty:</strong> {selectedWarranty. warrantyMonths}</p>
+              <p><strong>Service warranty:</strong> {selectedWarranty.sWarranty} Months</p>
+              <p><strong>Pro-Rate warranty:</strong> {selectedWarranty.pWarranty} Months</p>
               {/* <p><strong>Purchase Date:</strong> {new Date(selectedWarranty.purchaseDate).toLocaleDateString()}</p> */}
               <p><strong>Registered At:</strong> {new Date(selectedWarranty.createdAt).toLocaleString()}</p>
               <p>
-                <strong>Warranty Expiry:</strong>{" "}
+                <strong>ServiceWarranty Expiry:</strong>{" "}
                     {new Date(
                       new Date(selectedWarranty.createdAt).setMonth(
                         new Date(selectedWarranty.createdAt).getMonth() +
-                          (selectedWarranty.warrantyMonths || 0)
+                          (selectedWarranty.sWarranty || 0)
+                      )
+                    ).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>Product Pro-Rate Expiry:</strong>{" "}
+                    {new Date(
+                      new Date(selectedWarranty.createdAt).setMonth(
+                        new Date(selectedWarranty.createdAt).getMonth() +
+                          (selectedWarranty.pWarranty || 0)
                       )
                     ).toLocaleDateString()}
               </p>

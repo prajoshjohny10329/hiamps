@@ -13,6 +13,7 @@ interface Product {
   category: string;
   price: number;
   warranty: number;
+  pWarranty: number;
   image: string;
 }
 
@@ -58,7 +59,7 @@ export default function UserProductsPage() {
                   d="M12 7v10M7 12h10"
                   stroke="white"
                   stroke-width="2"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 />
               </svg>
               Add New Product
@@ -117,7 +118,7 @@ export default function UserProductsPage() {
                         <strong>{product.warranty}</strong> Months
                       </p>
                       <p className="px-3 pb-2 font-semibold text-black">
-                        <strong>{product.warranty}</strong> Months
+                        <strong>{product.pWarranty}</strong> Months
                       </p>
                       <p className="px-3 pb-4 font-semibold text-black">
                         ₹{product.price}

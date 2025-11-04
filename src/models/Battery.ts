@@ -8,7 +8,7 @@ export interface IBattery extends Document {
   email?: string;
   productType: string;
   purchaseDate: Date;
-  warrantyMonths: number;
+  sWarranty: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -22,7 +22,7 @@ const batterySchema = new Schema<IBattery>(
     email: { type: String },
     productType: { type: String, required: true },
     purchaseDate: { type: Date, required: true },
-    warrantyMonths: { type: Number, default: 2 },
+    sWarranty: { type: Number, default: 2 },
   },
   { timestamps: true }
 );

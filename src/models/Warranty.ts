@@ -8,7 +8,8 @@ export interface IWarranty extends Document {
   category: string;
   productName: string;
   purchaseDate: Date;
-  warrantyMonths: number;
+  sWarranty: number;
+  pWarranty: number;
   viewed: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -27,7 +28,8 @@ const warrantySchema = new Schema<IWarranty>(
     category: { type: String, required: true },
     productName: { type: String, required: true },
     purchaseDate: { type: Date, required: true },
-    warrantyMonths: { type: Number },
+    sWarranty: { type: Number },
+    pWarranty: { type: Number },
     viewed: { type: Boolean, default: false },
     state: { type: String, required: true },
     district: { type: String, required: true },
